@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 //import { ForgetComponent } from './register/forget.component';
 import { SharedModule } from '../shared/components/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { SharedModule } from '../shared/components/shared.module';
     //ForgetComponent
   ],
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     AuthRoutingModule,
     SharedModule,

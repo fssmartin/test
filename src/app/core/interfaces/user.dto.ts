@@ -10,6 +10,15 @@ export type Functions =
   | 'SELECT'
 
  
+export type LoginDto = {
+  email: string;
+  password: string;
+};
+
+export const defaultLoginDto: LoginDto = {
+  email: "",
+  password: "",
+};
 
 export interface UserData {
     id?:number,

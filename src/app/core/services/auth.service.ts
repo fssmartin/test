@@ -4,7 +4,7 @@ import {  BehaviorSubject, Observable, catchError, map, of, tap, throwError } fr
  
 import { GlobalService } from './global.service';
 
-import { NULL_USERDATA , UserData  } from '../interfaces/user.dto'
+import { LoginDto, NULL_USERDATA , UserData  } from '../interfaces/user.dto'
 import { LocalStorageService } from './localstorage.service';
 import { LoginResponse } from '../interfaces/token.dto';
 import { Router } from '@angular/router';
@@ -31,8 +31,11 @@ private readonly tokenKey = 'token';
 
   private _expiration = signal<number | null>(null);
   private _user = signal<UserData>(NULL_USERDATA);
+  private _loading = signal<boolean>(false);
+
   expiration = computed(() => this._expiration());
   user = computed(() => this._user());
+  loading = computed(() => this._loading());
 
   constructor(
     private router: Router,    
@@ -42,8 +45,11 @@ private readonly tokenKey = 'token';
     this.isLocalStorage(); 
   }
 
-  login$(email: string, password: string): Observable<UserData>  { 
-
+  login(userLogin:LoginDto): void { 
+    
+    
+    this._loading.set(true);
+    
     // data del post
     let user:UserData = { 
           username:"RPEM1",
@@ -69,15 +75,29 @@ private readonly tokenKey = 'token';
             ]
           }
     }    
+    
     const data = {
       token: "abc123...",
       expiresIn: 300,
       user: user  
     }
+    
+    setTimeout(() => {
+      this.setUserData(data);
+      this._loading.set(false);
+    }, 2000);
 
-    this.setUserData(data);
+        /*
+     this.http.post<UserTokenDto>(this.url, loginDto).subscribe({
+      next: (userToken) => {
+        this.setUserData(userToken);
+        this._loading.set(false);
+      },
+      error: (error) => this.loginError.set(error.message),
+    });
+    */
 
-    return of(data.user)
+    //return of(data.user)
 
   }
 

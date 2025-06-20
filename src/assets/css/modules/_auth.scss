@@ -28,7 +28,17 @@
 
 
     input{
-        color:$blue2;
+        color:$blue2; 
+        &.is-invalid{
+            border-color:red!important;
+            &:not([type="email"]){
+                border-right: 0 !important;            
+            }
+        }
+
+        &.ng-valid{
+            border-color:green!important;
+        }
     }
     
     &-wraper-full{
@@ -80,12 +90,12 @@
             width: 100%;
             display: flex;
         
-            & input[type=password], input[type=text] {
-              width: calc(100% - 7.1rem);
-              outline: none;
-              border-right: 0 !important;
-              border-top-right-radius:0;
-              border-bottom-right-radius:0;
+            & input[type=password], input[type=text] , input[type=email] {
+                width: calc(100% - 7.1rem);
+                outline: none;
+                border-right: 0 !important;
+                border-top-right-radius:0;
+                border-bottom-right-radius:0; 
             }
         
             & .auth-pasword-show{ 
@@ -111,6 +121,12 @@
                 &:hover{
                   cursor: pointer;
                 }
+                &.ng-invalid.ng-touched{
+                    border-color:red!important; 
+                }
+                &.ng-valid{
+                    border-color:green!important;
+                }                
             }  
         }
         
