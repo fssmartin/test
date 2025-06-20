@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobalService } from './core/services/global.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-empresa';
+  constructor(
+    private _globalService:   GlobalService
+  ){
+     this._globalService.errSubject.next(''); 
+  }
 }

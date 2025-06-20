@@ -1,0 +1,436 @@
+@use '../core/variables' as *;
+@use '../core/fonts' as *;
+@use '../core/mixins' as *;
+
+div:where(.swal2-container) {
+  padding: 2rem!important;
+}  
+
+.swal2-popup{
+
+    width: 43.8rem;
+    padding-bottom: 2rem;
+    .swal2-title{
+      font-size: 2.59rem; 
+    } 
+
+    .swal2-validation-message{
+      font-size: 1.3em;      
+    }
+
+    .swal2-info{
+      font-size: 1.2rem;
+      text-align: left;
+      display: inline-block;
+      color: $red2; 
+      margin-top: 10px;
+    }
+
+    &.swal2-saveupdate{ 
+      .swal2-html-container{font-size: 2rem;}          
+    }
+
+    .swal2-html-container{
+      font-size: 1.8rem;
+      color: $grey3;
+      width: 81%;
+      margin: 0 auto;
+      strong{
+        font-weight: bold;
+      }  
+      &.left{
+        text-align:left;        
+      }
+      &.ft-size14{
+        font-size:1.4rem;        
+      }
+    } 
+
+    &.swal2-special, &.swal2-noconexion{
+      &.swal2-conection{
+        background-repeat: no-repeat; 
+        background-image: url("../../images/errorconect.png");
+        background-size: 34%;
+        background-position: top center;
+        & div:where(.swal2-icon).swal2-error.swal2-icon-show{
+          border: none;
+        }
+        div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark{
+          opacity: 0;
+        }
+      }
+    }
+    
+    .swal2-actions{ 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      width: 50%;
+      margin-top: 3rem; 
+      width: 67%; 
+      gap: 0 20px;
+
+      &.center{
+        justify-content: center;
+      }
+      &--notop{
+        justify-content: center;
+      }
+      button{
+        padding: 0 1.4rem;
+        font-size: 1.6rem; 
+        height: 3rem;
+        min-width: 5rem;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .fa{
+          position: relative;
+          left: 0;
+          top: 0;
+          right: 0;
+          transform: none;
+          padding: 0;
+          font-size: 3rem;
+          // padding-left: .6rem;
+        }
+      }
+    }
+
+    div:where(.swal2-icon){
+      font-size: 1.5rem;
+      &.swal2-warning {
+        border-color: $blue;
+        color: $blue;
+      }
+    }
+
+    &.swal2-error{
+      &.swal2-timeout{
+        background-repeat: no-repeat;
+        background-image: url("../../images/timeup.png");
+        background-size: 40%;
+        background-position: top center;
+        & div:where(.swal2-icon).swal2-error.swal2-icon-show{
+          border: none;
+        }
+        div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark{
+          opacity: 0;
+        }
+      }
+      .swal2-actions{ 
+        justify-content: center;
+      }  
+    }
+
+    &.swal2-admin{
+
+      .swal2-title{ 
+        text-align: left;
+      }
+
+      .swal2-html-container{ 
+          display: flex!important; 
+          justify-content:space-between;
+          align-items: center;
+          gap:0 1rem;
+          flex-wrap: wrap;
+          width:auto;
+          & .al100{
+            width: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 0 1rem;
+           
+            & select{
+              width: calc(100% - 2rem);
+            }
+          }
+          & .mt-10{
+            margin-top: 1rem;
+          }
+          label{
+            flex:auto;
+            width: 90%;
+            margin:0;
+            padding: 0;
+            line-height: normal;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            &.labelHorizontal{
+              flex-direction:row;
+              align-items: center;
+              max-height: 1.3rem;
+            } 
+            &.al100{ 
+              margin-bottom:10px;
+            }
+            &.al50{
+              width:48%;
+              span{padding: 0;}
+              select{
+                padding: 0 0 0 4px; 
+                width: calc(100% - 6px);
+                margin: 0;
+              }
+            }
+            &.al33{
+              width:32%;
+              span{padding: 0;}
+              select{
+                padding: 0 0 0 4px; 
+                width: calc(100% - 6px);
+                margin: 0;
+              }
+            }            
+            &.textarea{
+              margin: 1.5rem 0 0 0;
+              & > span{    
+                top: -9px; 
+                padding: 0 10px 0 5px;
+                left: 7px;
+                position: absolute;
+              }              
+              &.ml-15{
+                margin-left: 1.5rem;
+              }
+            }
+            > span{     
+              font-size: 1.4rem;
+              background: #fff;
+              padding: 0 10px 0 0; 
+            }     
+          }
+
+          textarea, input,select{ 
+            width: 100%;
+            margin:0;
+            padding: 0 1rem;
+            line-height: 2.45rem;
+            min-height: 2.45rem;
+            height: 2.45rem;
+            color:$blue;
+            font-weight: lighter;
+          }
+          
+          input[type="text"],input[type="date"] {
+            min-height: 2.5rem;   
+            font-size: 1.22rem;         
+            &:focus{
+              color:$blue!important;
+              background-color: transparent;
+              outline: none;
+              box-shadow:none;
+            }
+          }
+
+          input[type="date"] {
+            padding: .2rem 0 0 .5rem;
+            & + span {
+              &::after {padding-left: 5px; }              
+
+            }
+            &:invalid + span::after {
+              content: "✖";
+            }
+            
+            &:valid + span::after {
+              content: "✓";
+            }
+          }
+
+          input[type="checkbox"],input[type="radio"] {
+            padding: 0;
+            width: auto;            
+            display: inline-block;
+            transition: none;
+            border: none;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+            & + span {
+              padding-left:1rem;
+              width: auto;
+              display: inline-block;
+            }
+            &[disabled] {
+              background-color: cyan;
+            }
+          }
+
+          select{
+            // padding: 0;
+            width: calc(100% - 2.2rem); 
+            line-height: 2.3rem;
+            min-height: 2.3rem;
+            height: 2.3rem; 
+            font-size: 1.22rem;
+            &[multiple]{
+              height: 100px;
+            }          
+            &:not(:checked) {
+              color: gray;
+            }
+            & option{
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap; 
+              color:$blue;
+            }
+            &::placeholder {
+              text-align:left; 
+              padding: 0;
+              margin: 0;
+            }
+              
+          }
+          
+          textarea{
+              padding: 10px 0 0 10px;
+              width: calc(100% - 10px);
+              resize: vertical;
+              overflow: auto;
+              &::placeholder {
+                text-align:left;
+                transform: translate(10px ,0px);
+                width: 200px;
+              }
+              
+          }
+          
+          .swal2-color{
+            display: inline-block;
+            width:100%;
+            height: 2rem;
+          }
+
+          .separator{
+            flex: auto;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            line-height: normal;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background : #ccc;
+            margin: 1.5rem 0;
+            height: .1rem;
+            & + label, & + .swal2-info{
+              margin-top: 0 !important;
+            }
+            &--init{
+              margin: 0.5rem 0;
+            }
+          }
+
+          .swal-center{
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            width: 100%;
+            gap: 0 1.5rem;           
+          }
+
+      }
+      
+    }
+
+    .swal2-idioma,.swal2-typo {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &:before{
+        content: "\f0ac";
+        font-size: 2em;
+        font: normal normal normal 14px / 1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        color: $blue;
+        -webkit-font-smoothing: antialiased;
+      }
+
+
+
+      .labelHorizontal{
+        width: 10rem!important;
+      }
+      input{
+        border: none;
+        box-shadow: none;
+        background: none;
+        transition: none;        
+        & + span{
+          padding: 0 0 0 1rem!important;
+          width: -webkit-fill-available;
+          display: inline-block;
+          width: 8.5rem;
+          width: 10rem!important;  
+        }
+      }
+      & > span{ 
+        display: inline-block;
+        width: 155px;
+        min-width: 155px;
+        text-align: left;
+        padding: 0 0 0 .5rem;
+        color: $blue;   
+      }
+    }
+
+    .swal2-typo {
+      width: 60%; 
+      &:before{
+        content: "\f013"; 
+      }
+
+      .labelHorizontal{
+        width: auto!important;
+      }
+      & > span{
+        width: auto; 
+      }
+    } 
+
+    .swal2-typeQuestion{
+      width: 100%;
+      display: none;
+      text-align: left;
+      &.show{
+        display: block;
+      }
+    }
+
+    .swal2-typeForm{
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 4rem;
+      opacity: .3;
+      color:#56a5eb;
+      display: none;
+    }
+
+    &.swal2-edit .swal2-typeForm--edit  {
+      display: block;
+    }
+
+    &.swal2-new .swal2-typeForm--new  {
+      display: block;
+    }
+
+    &.swal2-list .swal2-typeForm--list  {
+      display: block;
+    }
+
+    .swal2-title--special{
+      line-height: normal;
+      font-size: 2.1rem;
+    }
+
+} 

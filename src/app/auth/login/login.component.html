@@ -1,0 +1,67 @@
+ <div class="auth auth--login animated fadeIn ">
+
+                    
+            <form id="login"> 
+                
+                <h1>Sign In</h1>
+                <h2>Get access to more learning features</h2>
+                <h2>Don't have an account?
+                    <a href="#ni" 
+                    title="Register"
+                    [class.disabled]="disabled"
+                    routerLink="/auth/register">Register</a>
+                </h2>
+
+                <div class="auth-wraper-full">
+                    <div class="auth-wraper auth-wraper--email">        
+                        <label> Email </label>
+                        <i class="fa fa-envelope fa-ico" aria-hidden="true"></i>
+                        <input name="email" type="email" 
+                                id="emailForm" 
+                                placeholder="Email"
+                                autofocus=""
+                                #inputEmail required autocomplete="off"> 
+                    </div>
+             
+                    <div class="auth-wraper auth-wraper--pasword">
+                        <label>Password</label>
+                        <i class="fa fa-lock fa-ico" aria-hidden="true"></i>
+                        <input  type="password" 
+                                id="password"
+                                autofocus=""
+                                placeholder="Password"
+                                role="presentation" #inputPass required autocomplete="off" autofocus="" 
+                                
+                                />
+                        <div class="auth-pasword-show" (click)="passwordShowhide(inputPass,'.eye')" > 
+                            <i class="fa fa-eye eye" aria-hidden="true"></i> 
+                        </div> 
+            
+                        <div *ngIf="isError" class="invalid-feedback">
+                            <p class="error_formulario">El usuario o contraseña son incorrectos.</p>
+                        </div>
+                    </div> 
+                </div>
+
+                <a href="#ni"  routerLink="/auth/forget" tittle="Forgot your password?" class="forgotuser">Forgot your password?</a>
+        
+            </form>
+        
+        <!-- mod botones  --> 
+            <ul class="menu-buttons menu-buttons--vertical">
+                <li class="menu-buttons-item">
+                    <a class="btn btn--save" 
+                    title="Sign In"
+                    (click)="login()">
+                        Sign In
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    </a>
+                </li>
+            
+            </ul>
+ 
+
+</div>    
+
+
+

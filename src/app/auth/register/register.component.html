@@ -1,0 +1,95 @@
+<div class="auth auth--register animated fadeIn ">
+
+  <!-- componente logo  -->         
+    <!-- <app-logo-small [cssClass]="''"></app-logo-small>   -->
+
+    <form id="registrar"> 
+        
+        <h1 class="only">Crea tu Cuenta</h1>
+        
+        <div class="auth-wraper auth-wraper--usu">        
+            <label>Nombre</label>
+            <i class="fa fa-user fa-ico" aria-hidden="true"></i>
+            <input id="name" type="text" 
+                        class="form-rounded-log" 
+                        name="name"  
+                        placeholder="Nombre"
+                        pattern="[a-zA-Z0-9\s]+"
+                        role="presentation" required autocomplete="off" autofocus="" /> 
+            
+        </div>
+
+        <div class="auth-wraper auth-wraper--email">        
+            <label>Email</label>
+            <i class="fa fa-envelope fa-ico" aria-hidden="true"></i>
+            <input id="email" type="text" 
+                        class="form-rounded-log" 
+                        name="email" 
+                        placeholder="Email" 
+                        role="presentation" required autocomplete="off" autofocus=""/> 
+            <div class="invalid-feedback"  role="alert">
+                <p class="error_formulario" id="users_error">El email ya existe.</p>
+                <p class="error_formulario" id="users_error">El campo email , no tiene formato email</p>
+            </div>
+        </div>
+
+        <div class="auth-wraper auth-wraper--pasword">
+            <label> Contraseña </label>
+            <i class="fa fa-lock fa-ico" aria-hidden="true"></i>
+            <input  type="password" 
+                    id="password"
+                    autofocus=""
+                    placeholder="Contraseña"
+                    role="presentation" #inputPass required autocomplete="off" autofocus="" 
+                    
+                    />
+            <div class="auth-pasword-show" (click)="passwordShowhide(inputPass,'.eye')" > 
+                <i class="fa fa-eye eye" aria-hidden="true"></i> 
+            </div>
+          
+            <div class="invalid-feedback"  role="alert">
+                <p id="letter"  class="error_formulario" >Debe contener al menos una minúscula.</p>
+                <p id="capital" class="error_formulario" >Debe contener al menos una mayúscula.</p>
+                <p id="number"  class="error_formulario" >Debe contener al menos un número.</p>
+                <p id="length"  class="error_formulario" >Debe contener al menos 8 carácteres.</p>
+            </div>            
+        </div> 
+
+        <div class="auth-wraper auth-wraper--pasword">
+            <label>Confimar Contraseña</label>
+            <i class="fa fa-lock fa-ico" aria-hidden="true"></i>
+            <input  type="password" 
+                    autofocus=""
+                    placeholder="Confimar Contraseña"
+                    #inputPass2 required  autocomplete="off"
+                     />
+            <div class="auth-pasword-show" (click)="passwordShowhide(inputPass2,'.eye2')" > 
+                <i class="fa fa-eye eye2" aria-hidden="true"></i>
+            </div>
+        </div> 
+        
+         
+
+    </form>
+        
+<!-- mod botones  --> 
+    <ul class="menu-buttons menu-buttons--vertical ">  
+        <li class="menu-buttons-item">
+            <a class="btn btn--save "
+                title="'COMMONS.CONTINUE' | translate"
+                routerLink="/auth/register">
+                Continuar
+                <i class="fa fa-user-plus" aria-hidden="true"></i>
+            </a>
+        </li> 
+        <li class="menu-buttons-item ">
+            <p>¿Ya tienes una cuenta?</p>
+            <a class="btn btn--enlace btn--bold" 
+                title="'ACCESS.MSG_LOGIN.MSG_INIT' | translate "
+                routerLink="/auth">
+               Iniciar Sesion
+            </a>
+        </li> 
+    </ul>
+ 
+</div>

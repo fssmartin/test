@@ -1,0 +1,258 @@
+@use '../core/variables' as *;
+@use '../core/fonts' as *;
+@use '../core/mixins' as *;
+
+
+
+app-navbar{
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    position: fixed; 
+    top: 0; 
+    background-color: $blue;
+    text-align: center;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+    z-index: 9999999;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    line-height: normal;
+    margin-bottom: auto;
+    padding: 2px 0; 
+    width: 100%;
+    background-color: $blue;
+    border-color: $blue;
+    margin:0;
+    min-height: 4.4rem;
+
+    @include respond(sm) {
+        min-height: 5.47rem;
+    }
+
+    @include respond(ls) {
+        max-width: 140rem;
+    }
+
+    &.login{
+
+        justify-content:space-between;
+        .navbar-logo{
+            position: relative; 
+            display: none;
+            top: 2px;
+
+                
+            &--mobile{
+                top: 4px;
+                display: block;
+            }               
+        }
+        .nabvar-user{
+            margin-left: auto;
+            width: auto;   
+            min-height: 5rem;
+        }
+
+        @include respond(sm) {
+            .navbar-logo{
+                display: block;
+
+                &--mobile{
+                    display: none;
+                }               
+            }    
+        }  
+    }
+ 
+
+    .navbar-logo{
+        display:inline-block;
+        position: absolute;
+        left:16px; 
+        top: 6px;
+        display: none;
+        
+        &--mobile{
+            top: 14px;
+            display: block;
+        }   
+ 
+        @include respond(sm) {
+            display: block;
+                        width: 10rem;
+            height: 4.5rem;
+            overflow: hidden; 
+            & img {
+                width: 50px; 
+            }
+            &--mobile{
+              display: none;
+            } 
+          }
+    }
+    
+    .logo-softtek-nav{ 
+        width: 85px;
+        height: auto;
+        position: relative;
+        top: 1px;
+    } 
+        
+    .nabvar-user{            
+        position: relative;    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color:$white;
+        gap: 0 20px ;
+        padding: 0 10px; 
+        margin-left: auto;
+        min-height: 5.47rem;
+        
+        a{color:$white;}
+
+        & p{
+            display: flex;
+            align-items: center;
+            gap: 0 5px;
+            margin: 0;    
+            font-size:2rem;
+            text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 
+               1px 1px 1px rgba(0, 0, 0, 0.6);
+        } 
+        ul{
+            padding: 0 1rem;
+            border-right: 1px solid $grey5;
+            border-left: 1px solid  $grey5;
+        }
+
+        .fa{
+            font-size:3.5rem;
+            text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.6);
+            text-shadow: none;
+            position: absolute;
+            top:0.8rem;
+        }
+        
+        .user-info{
+            display: block;
+            em{display: none;}
+            & .fa{  
+                display: block;
+                padding-right:0;
+                left:-10px;                
+                @include respond(sm) {
+                        opacity: .6;
+                        padding-right: .8rem;
+                        left:-30px; 
+                } 
+            }
+            @include respond(xs) {
+                padding-left:1rem;
+            } 
+            @include respond(sm) {
+                em{display: block;}
+                padding-left:0;
+            } 
+
+        }
+        .user-login{
+            display: flex;
+            align-items: center;
+            padding-right: .5rem;
+            cursor: pointer;
+            .fa{
+                padding-right: .8rem;
+                position: relative;
+                top:0;
+                font-size:2.8rem
+            }
+            &:hover{
+                color:$white2;
+            }
+        }    
+        .user-idioma{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap:0 10px; 
+            a{
+                opacity:.6;
+                font-size:1.5rem;
+                &:hover{
+                    opacity:1;
+                }
+                &.active{
+                    pointer-events: none;
+                    opacity:1;
+                    font-size:1.9rem;
+                    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 
+                    1px 1px 1px rgba(0, 0, 0, 0.6);
+                }
+            }
+            &.noLogin{
+                display: flex;
+            }           
+
+        }
+
+        .user-out{
+            position: relative;
+            width: 40px; 
+            height: 40px;
+            opacity: 1;
+            cursor: pointer;
+            &::before{ 
+                content: '';
+                position: absolute;
+                left:0;
+                top: 2px;
+                width: 35px; 
+                height: 35px;
+                background: url(../../images/logout.png) no-repeat top left;
+                background-size: contain;
+                z-index: 1;           
+                @include respond(sm) {
+                    top: -1px;
+                    width: 40px; 
+                    height: 40px;
+                } 
+            }
+            &:hover{
+                opacity: .8;
+            }
+            & .fa:hover{
+                text-shadow: none;
+            }
+        }
+        
+        @include respond(sm) {
+            width: auto;
+        }  
+      
+    }    
+ 
+    .menu-idioma{ 
+        &-enlace{
+            & img{
+                width: 40px;
+                height: 30px;
+                opacity: .5;
+            }
+            &.active img{
+                width: 50px;
+                height: 40px;
+                opacity: 1;
+            }
+            &:hover img{
+                opacity: 1;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+
+// Fonts
+
+$reset-font-size: 1rem;
+
+
+ 
+
+@font-face {
+    font-family: "Poppins";
+    src: url(./fonts/poppins-700.woff2?d=1294);
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap
+}
+ 
+
+@font-face {
+    font-family: "Poppins";
+    src: url(./fonts/poppins-600.woff2?d=1294);
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(./fonts/poppins-500.woff2?d=1294);
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(./fonts/poppins-regular.woff2?d=1294);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(./fonts/poppins-italic.woff2?d=1294);
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(./fonts/poppins-300.woff2?d=1294);
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Balmoral';    
+    src: url('./fonts/balmoral.ttf') format('truetype');
+}
+
+// @include font-face(Mulish, fonts/mulish, 1Ptwg83HX_SGhgqk2hAjQlW_mEuZ0FsSKeOfGZQ6, italic, 400);
+// @include font-face(Mulish400, fonts/mulish, 1Ptvg83HX_SGhgqk3wot, normal, 400);
+// @include font-face(Mulish700, fonts/mulish, 1Ptvg83HX_SGhgqk3wot, normal, 700);
+// @include font-face(Mulish800, fonts/mulish, 1Ptvg83HX_SGhgqk3wot, normal, 800);
+
+
+
+// @include font-face(DINProLight, fonts, DINProLight);
+// @include font-face(DINProRegular, fonts, DINProRegular);
+// @include font-face(DINProMedium, fonts, DINProMedium);
+// @include font-face(DINProBold, fonts, DINProBold);
+// @include font-face(DINProBlack, fonts, DINProBlack);
+
+
+
+
+// %regular{
+// 	font-family: DINProRegular, Arial, "Helvetica Neue", Helvetica, sans-serif;
+// }
+
+// %light{
+// 	font-family: DINProLight, Arial, "Helvetica Neue", Helvetica, sans-serif;
+// }
+
+// %medium{
+// 	font-family: DINProMedium, Arial, "Helvetica Neue", Helvetica, sans-serif;
+// }
+
+// %strong{
+// 	font-family: DINProBold, Arial, "Helvetica Neue", Helvetica, sans-serif;
+// }
+
+// %blackFont{
+// 	font-family: DINProBlack, Arial, "Helvetica Neue", Helvetica, sans-serif;
+// }

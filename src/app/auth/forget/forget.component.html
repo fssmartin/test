@@ -1,0 +1,41 @@
+ <div class="auth auth--login animated fadeIn ">
+                    
+            <form id="login"> 
+                
+                <h1>Reset your password</h1>
+                <h2>If the account exists, we will email you instructions to reset the password.</h2>
+
+                <div class="auth-wraper-full">
+                    <div class="auth-wraper auth-wraper--email">        
+                        <label> Email </label>
+                        <i class="fa fa-envelope fa-ico" aria-hidden="true"></i>
+                        <input name="email" type="email" 
+                                id="emailForm" 
+                                autofocus=""
+                                placeholder="Enter your email address"
+                                #inputEmail required autocomplete="off"> 
+                    </div>
+              
+                </div>
+
+  
+            </form>
+        
+        <!-- mod botones  --> 
+            <ul class="menu-buttons menu-buttons--vertical">
+                <li class="menu-buttons-item">
+                    <a class="btn btn--save" 
+                    title="Send reset link"
+                    (click)="reset()">
+                        Send reset link
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </a>
+                </li>
+            
+            </ul>
+ 
+
+</div>    
+
+
+

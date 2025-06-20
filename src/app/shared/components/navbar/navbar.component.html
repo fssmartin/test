@@ -1,0 +1,45 @@
+<div class="navbar"
+	[ngClass]="{
+		'login': localDataUser().email
+	}">
+	
+	<a [routerLink]="['/home']" routerLinkActive="router-link-active" class="navbar-logo" >
+		<img src="./assets/images/logo.png" alt="empresa" class="logo-empresa-nav" />
+	</a>		
+
+ 
+	<div class="nabvar-user" > 
+
+		<p class="user-info" *ngIf="localDataUser().email">
+			<i class="fa"
+				[ngClass]="{
+				  'fa-user-secret': localDataUser().role!.id== 1,
+				  'fa-user-md':     localDataUser().role!.id== 2,
+				  'fa-user':        localDataUser().role!.id== 0}"
+				aria-hidden="true"></i>	
+			<em>{{localDataUser().username}}</em>  
+		</p>
+
+		<!--p  *ngIf="(timeLeft$() / 1000)  > 0" >Tiempo restante: {{ (timeLeft$() / 1000) | number:'1.0-0' }} segundos</p-->
+		
+		<ul class="user-idioma" style="display: none;">  
+			<li><a href="#ni"  class="active"    (click)="changeLanguage('es', $event)" >Es</a></li>
+			<li><a href="#ni"  title="English"   (click)="changeLanguage('en', $event)" >En</a></li> 
+			<li><a href="#ni"  title="Portugues" (click)="changeLanguage('pt', $event)" >Pt</a></li> 
+		</ul>  
+
+		<a  (click)="login()" class="user-login" 
+			title="Sign In"  
+			*ngIf="localDataUser().email===''"
+		>
+			<i class="fa fa-user-o"aria-hidden="true"></i>Sign In
+		</a> 
+		
+		<a  (click)="logout()" 
+			title="Salir" class="user-out" 
+			*ngIf="localDataUser().email !='' "
+		></a> 
+		 
+
+	</div> 
+</div>

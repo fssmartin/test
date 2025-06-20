@@ -1,0 +1,37 @@
+<div class="dashboard dashboard--home animated fadeIn "> 
+ 
+<!-- componente menu-buttons  -->  
+ 
+        <ng-container *ngIf="localDataUser().email; else noUser">
+                <ul class="menu-buttons menu-buttons--vertical ">
+                        <li class="menu-buttons-item"> 
+                                <a class="btn btn--primary hvr-pulse-shrink" appShowEffectClick 
+                                        (click)="goPage('/test')" >Test
+                                        <i class="fa fa-comments-o" aria-hidden="true"></i></a>
+                        </li>
+        
+                        <li class="menu-buttons-item">
+                                <a class="btn btn--primary hvr-pulse-shrink" appShowEffectClick    
+                                        (click)="goPage('/user')"  >Perfil
+                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                        </li>
+                                                                        
+                        <li class="menu-buttons-item">
+                                <a class="btn btn--secundary hvr-pulse-shrink"  appShowEffectClick 
+                                        (click)="goPage('/admin')" >Admin
+                                        <i class="fa fa-cogs" aria-hidden="true"></i></a>
+                        </li>
+                        
+                        <li class="menu-buttons-item">
+                                <a class="btn btn--primary hvr-pulse-shrink"  appShowEffectClick 
+                                        (click)="goExit()">Salir
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                        </li>
+                </ul>  
+        </ng-container>
+        <ng-template #noUser>
+                <h1>Accede a tu espacio de evaluación</h1>
+                <p>Realiza tests asignados, consulta tus resultados y gestiona tu progreso desde un único lugar.</p>
+        </ng-template>
+
+</div> 

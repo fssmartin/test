@@ -1,0 +1,199 @@
+/* Layout */
+
+@use '../core/variables' as *;
+@use '../core/fonts' as *;
+@use '../core/mixins' as *;
+
+
+%bodyCopy {
+  font-family: Poppins;
+	//font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html{
+	-ms-text-size-adjust: 100%; 
+ 	-webkit-text-size-adjust: 100%; 
+ 	-moz-text-size-adjust: 100%;
+	font-size:x-small;
+  background-color: $blue4;
+}
+
+html,
+body{
+	height: max-content;
+
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	@extend %bodyCopy; 
+  line-height: 1.7em;
+	font-size:1.6rem; 
+	color:$black; 
+  text-align: center; 
+	overflow-y: scroll;
+	overflow-x: hidden; 
+  background:transparent;
+
+}
+
+body, input, textarea, select, button {
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul, li{
+	margin:0;
+	padding:0;
+  list-style-type: none;
+}
+ 
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.container{   
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 100%;  
+    margin: 0 auto ;
+    padding:0 0 1.5rem 0;  
+    position: relative;
+    overflow: hidden;
+    background: $white;
+ }
+
+ app-home, app-login,app-register,app-page-not-found,
+ app-user-dashboard, app-name,app-password,
+ app-admin-dashboard, app-games-dashboard, app-arcade{
+  margin-top: 7rem;  
+}
+
+app-home{
+ margin-top: 6rem; 
+ height: calc(100vh - 7.5rem); 
+}
+   
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+
+  h1{
+    text-align: center;
+    width: 100%;
+    color: $blue2;
+    padding-bottom: 10px;
+    line-height: 27px;
+    font-size: 32px;
+    font-weight: bold;
+    &.only{
+      margin-bottom: 3.5rem;
+    }
+
+    & + h2{
+    //  margin-bottom: 3.5rem;
+    }
+  }
+  h2{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 0;
+    a{    color: $blue;}
+  }    
+
+} 
+
+label{
+  font-size:20px;
+  padding:0;
+  text-align:left;
+  width: 26.2rem;
+}
+
+.error_formulario{
+  color:$red2;
+  padding:0;
+  font-size: 1.25rem;
+  position: relative; 
+} 
+
+ app-footer{
+  width: 100%;
+  display: inline-block; 
+  padding: 10px 0 0 0;
+  line-height: normal; 
+  position: absolute;
+  bottom: 0;
+  display: none;
+} 
+ 
+a{ 
+	text-decoration: none;
+	color:$green;
+
+}
+
+h1{
+  text-transform: capitalize;
+  font-size: 2.8rem;
+}
+
+h2{
+	margin:0;
+	padding:0;
+	font-size: 2.5rem;
+}
+
+section{
+ background:$white;
+	 
+}
+
+.hidden{
+  display: none!important;
+}
+
+
+/* Animaciones */
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {animation-name: fadeIn;} 
+
+.pointer {cursor: pointer;}
+
+.disabled{
+  pointer-events: none!important;
+}
+ 

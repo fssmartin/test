@@ -1,0 +1,32 @@
+ 
+ 
+  .scroll-top-btn { 
+    pointer-events: all; 
+    position: fixed; 
+    top: calc(100svh - 10rem);
+    right: 11rem;
+    background-repeat: no-repeat;
+    background-image: url("../../../../assets/images/_arrow_up.svg");
+    background-size: contain;
+    -webkit-box-shadow: 0 5px 13px -9px #000;
+    box-shadow: 0 5px 13px -9px #000;
+    display: inline-block; 
+    text-decoration: none;
+    width: 28px;
+    height: 38px;
+    border-radius: 50%;
+    transition: all .3s ease-out;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .fa-chevron-up{
+    position: relative;
+    top: -13px;
+    right: 5px;
+  }
+    
+
+.hidden {
+    display: none;
+}

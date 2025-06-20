@@ -1,0 +1,37 @@
+<div class="dashboard dashboard--admin animated fadeIn "> 
+        <ul class="menu-buttons menu-buttons--admin  "> 
+                 <li class="menu-buttons-item menu-buttons-item--home">
+                        <a class="btn btn--secundary" #home
+                                [skipLocationChange]="true" 
+                                routerLinkActive="active" routerLink="/home"
+                        ><i class="fa fa-home" aria-hidden="true"></i></a>
+                </li>
+                <li class="menu-buttons-item">
+                        <a class="btn btn--secundary" #preguntas
+                                [skipLocationChange]="true" 
+                                routerLinkActive="active" routerLink="questions"
+                        ><i aria-hidden="true" class="fa fa-question-circle"></i>Preguntas</a>
+                </li>
+                <li class="menu-buttons-item">
+                        <a class="btn btn--secundary" #categories
+                                [skipLocationChange]="true" 
+                                routerLinkActive="active" routerLink="categories"
+                         ><i aria-hidden="true" class="fa fa-pie-chart"></i>Categorias</a>
+                </li>
+                <li class="menu-buttons-item">
+                        <a class="btn btn--secundary" #config
+                                [skipLocationChange]="true" 
+                                routerLinkActive="active" routerLink="configuration"
+                        ><i aria-hidden="true" class="fa fa-cogs"></i>configuracion</a>                   
+                </li>
+                <li class="menu-buttons-item">
+                        <a class="btn btn--secundary" #users
+                                [skipLocationChange]="true" 
+                                routerLinkActive="active" routerLink="users"
+                        ><i aria-hidden="true" class="fa fa fa-users"></i>Usuarios</a>                    
+                </li>
+        </ul> 
+
+        <router-outlet></router-outlet>
+
+</div> 

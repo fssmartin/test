@@ -1,0 +1,332 @@
+@use '../core/variables' as *;
+@use '../core/fonts' as *;
+@use '../core/mixins' as *;
+
+
+app-admin-dashboard{
+    width:100%;
+    display:block;
+}
+
+.dashboard{ 
+
+    position: relative;
+    margin: 0 auto; 
+    width:100%; 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     
+    & .animation_container{
+        width:260px;  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto; 
+        margin-bottom:0;
+        img{
+            width: 75%;
+        } 
+        @include respond(lg) {
+            img{
+                width: 100%;
+            }
+            margin-bottom:6rem;
+        }
+    }
+
+    &--admin{
+        width:calc(100% - 4rem);
+        display: inline-block;  
+        .admin{            
+            height: calc(100vh - 14.1rem);
+        }
+
+        .admin__title{
+            text-align:left;
+            display:flex;
+            justify-content:left;
+            flex-direction: column;
+            margin:0 auto;
+            color:$green2!important;
+            &-actions{
+                width: 100%;
+                display: flex;    
+                justify-content:right;
+                flex-wrap: wrap;
+                gap:1.5rem 0;  
+                align-items: center;
+                margin-bottom:1rem;
+                &.questions{
+                    justify-content:space-between;
+                }
+                @include respond(sm) {
+                    margin-bottom:0;
+                    flex-wrap: nowrap;
+                } 
+            }
+
+            & .admin__desc{
+                margin-bottom: 1rem;
+                display: inline-block;
+                width: auto;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding-bottom: .3rem;
+                font-size: 2.2rem;
+                @include respond(sm) {
+                    font-size: 2.6rem;
+                } 
+                & .fa{padding-right: 1rem;opacity:.7;font-size:4rem}
+            } 
+
+            .paginationTotal-container{
+                font-size: 1.5rem; 
+                display: flex;
+                justify-content: space-between;
+                align-items: center; 
+                flex-basis: 8rem;
+                select{
+                    border: 1px solid $green2!important;
+                    color: $grey6!important;
+                    background: $white;
+                    font-size: 1.5rem;
+                    border-radius: 5px;
+                    max-height: 3.1rem;
+                    min-height: 3.1rem;
+                    height: 3.1rem;
+                    padding: 0;
+                    margin: 0 0 0 1rem;
+                    width: auto;
+                    @include respond(lg) {
+                        margin-left:5px;
+                    }                     
+                }
+                @include respond(sm) {
+                    width: 100%;
+                } 
+            }
+
+            .search-container{
+                flex-basis: calc(100% - 9rem);
+                max-height: 3.5rem;
+                vertical-align: middle;
+                white-space: nowrap;
+                position: relative; 
+                overflow: hidden;
+                @include respond(sm) {
+                    width:auto;
+                    flex-basis: calc(70% - 160px);
+                } 
+                input{
+                    width: calc(100% - 19px);
+                    height: 3.1rem; 
+                    border: 1px solid $green2;
+                    background: $white;
+                    font-size: 1.5rem;
+                    float: left;
+                    color: $grey6;
+                    padding:0 0 0 1.5rem; 
+                    border-radius: 5px;
+            
+                    -webkit-transition: background .55s ease;
+                    -moz-transition: background .55s ease;
+                    -ms-transition: background .55s ease;
+                    -o-transition: background .55s ease;
+                    transition: background .55s ease;
+            
+                    &::-webkit-input-placeholder {
+                        color: $grey3;
+                    }
+                    &:-moz-placeholder { 
+                        color: $grey3;  
+                    }
+                    &::-moz-placeholder {
+                        color: $grey3;  
+                    }
+                    &:-ms-input-placeholder {  
+                        color: $grey3;
+                    }
+                    &:hover, &:focus, &:active{
+                        outline:none;
+                        background: $white;
+                    }
+                    &:disabled{
+                        border: 1px solid $grey2;
+                    }
+                }
+                        
+                .icon{
+                    position: absolute;
+                    top: 2px;
+                    right: 13px;
+                    z-index: 1;
+                    color: #b9b9b9;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+        & .logo-softtek-head{
+            margin-bottom:2rem!important;
+        }
+
+        & .admin--csv{
+            width: calc(100% - .2rem);
+            text-align: center;
+            margin: 0 auto;
+            .csv { 
+                margin: 1rem auto 2rem auto;
+                padding: 2rem 0;
+                border-radius: 5px;
+                position: relative;
+                border-bottom: 3px solid $green5 !important;
+                outline: solid $green2 1px !important;
+              }
+              
+              button:disabled {
+                background-color: $grey2;
+              }
+            
+              .file-select {
+                position: relative;
+                display: inline-block;
+                &.disabled::before{
+                    background-color: $grey2;
+                }
+              }
+              
+              .file-select::before {
+                content: attr(data-label); 
+                background-color: #5678EF;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 3px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+              }
+              
+              .file-select input[type="file"] {
+                opacity: 0;
+                width: 200px;
+                height: 32px;
+                display: inline-block;
+              }
+
+              .csv__wraper{
+                display: flex;
+                margin-bottom: 2rem;
+                gap: 0 2rem;
+                width: calc(100% - 4rem);
+                
+                .csv__label{
+                  flex:auto; 
+                  margin:0;
+                  padding: 0;
+                  line-height: normal;
+                  position: relative;
+                  width:33%;
+                   
+                  .csv__titleselect{padding: 0;}
+                  .csv__select{
+                        width: calc(100% - 2.2rem);
+                        line-height: normal;
+                        min-height: 2.3rem;
+                        height: 2.3rem;
+                        padding: 0 1rem; 
+                        border: 1px $green2 solid !important;   
+                        &:not(:checked) {
+                            color: gray!important;
+                        }
+                        & option{
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap; 
+                            color:$blue;
+                        }
+                        &::placeholder {
+                            text-align:left; 
+                            padding: 0;
+                            margin: 0;
+                        } 
+                  }
+                 
+                  span{     
+                    font-size: 1.8rem; 
+                    padding: 0; 
+                  }     
+      
+                }
+              }
+              
+              #thefile::before {
+                content: attr(data-label); 
+              }
+ 
+        }
+
+        @include respond(sm) {
+
+            .admin__title{ 
+                flex-direction: row;
+                justify-content:space-between; 
+                & .admin__desc{
+                    margin:0;
+                    width:auto;
+                }
+                &-actions{
+                    // flex-basis: 60%;
+                    width:auto;
+                    flex-direction: row;
+                    justify-content:right;
+                    gap: 0 1.5rem;
+                } 
+            }
+
+ 
+        } 
+
+        @include respond(md) {
+            max-width:140rem; 
+            .admin__title{  
+                flex-direction: row;
+                justify-content:space-between; 
+                &-actions{
+                    flex-basis: 60%;      
+                    justify-content:flex-end!important;               
+                } 
+            } 
+        }  
+
+        @include respond(lg) {
+            width: 100%;       
+        } 
+
+        .admin--questions{
+            @include respond(sm) {
+                .admin__title{  
+                    flex-direction: column; 
+                    gap: 1rem 0; 
+                }
+            }    
+            @include respond(md) {
+                max-width:140rem; 
+                .admin__title{
+                    flex-direction: row;
+                    justify-content:space-between; 
+                } 
+            }
+        }   
+ 
+    }
+} 
+
+  

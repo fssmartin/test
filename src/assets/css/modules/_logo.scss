@@ -1,0 +1,45 @@
+@use '../core/variables' as *;
+@use '../core/fonts' as *;
+@use '../core/mixins' as *;
+
+
+.logo-head {
+    display: block;
+    width: 20rem;  
+    margin: 2rem auto;
+    @include respond(md) {
+      margin: 1rem auto 2rem auto;
+    }
+    @include respond(lg) {
+      margin: 2rem auto 6rem auto;
+    }
+
+    .dashboard--admin &{
+      width:  12rem;
+      margin: 1rem auto;
+      position: absolute; 
+      right: -10px;
+      top: -10px;
+      opacity: .8;
+    
+      @include respond(md) {
+        margin: 1rem auto;
+      }
+      @include respond(lg) {
+        margin: 1rem auto;
+      }
+    }
+
+    &.logo-medium{
+      width: 30rem;  
+    }
+}
+.dashboard--admin .logo-head{
+  display: none;
+  @include respond(md) {
+    display: block;
+  }
+}
+
+  
+  
