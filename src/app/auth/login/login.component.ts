@@ -91,22 +91,11 @@ export class LoginComponent {
           this.loading = false; 
       }else{ 
           this.isError = false;  
-          this._authService.login$(email.value.trim(), clave.value.trim())
+          this._authService.login$(email.value.trim() ?? "", clave.value.trim() ?? "")
           .subscribe(
             (response: any) => {   
               this.loading = false;
-              /*
-              if (response==='noconexion' ) {        
-                this.disabled = 'true';                        
-              }
-              */
                console.log("response__",response)
-              //no hace falta
-              // if (response===false) {        
-              //   //NO es admin es normal 
-              //   this._authService.setUserData(user);  
-              // } 
-
               this.router.navigate(['/home']);     
             } 
           ); 

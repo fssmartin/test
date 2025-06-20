@@ -1,4 +1,11 @@
 <div class="dashboard dashboard--admin animated fadeIn "> 
+
+        <div class="menu-hamburger" (click)="toggleMenu()" [class.is-active]="isMenuOpen">
+                <div class="_layer -top"></div>
+                <div class="_layer -mid"></div>
+                <div class="_layer -bottom"></div>
+        </div>
+
         <ul class="menu-buttons menu-buttons--admin  "> 
                  <li class="menu-buttons-item menu-buttons-item--home">
                         <a class="btn btn--secundary" #home
@@ -31,6 +38,11 @@
                         ><i aria-hidden="true" class="fa fa fa-users"></i>Usuarios</a>                    
                 </li>
         </ul> 
+
+
+        <!-- <div class="whatami">
+                <button class="btn btn--save btn--ami">{{user.role?.name}}</button>
+        </div> -->
 
         <router-outlet></router-outlet>
 

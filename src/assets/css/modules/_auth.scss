@@ -20,12 +20,9 @@
 
     .forgotuser{
         color: $blue;   
-        &:hover{
-            text-decoration: underline;
-        }
     }
 
-    a:hover{
+    a:hover:not(.btn){
         text-decoration: underline;
     }
 
