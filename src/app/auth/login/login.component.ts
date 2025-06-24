@@ -59,25 +59,11 @@ export class LoginComponent {
     },{ allowSignalWrites: true }); 
 
   }
-
-  protected isInvalid(controlName: string): boolean | undefined {
-    const control = this.form.get(controlName);
-    if (!control) return undefined;
-    if (control.pristine) return undefined;
-    return control.invalid;
-  }
-
+ 
   ngOnInit(){
     this.renderer.removeClass(document.body, 'noCanvas'); 
   }
-   
   
-  passwordShowhide(input: any, eye:string):void {
-    var eyeButton = document.querySelector(eye);
-    eyeButton!.classList.toggle('fa-eye-slash');     
-    input.type = input.type === 'password' ? 'text' : 'password';
-  }
- 
 
   login():void{  
 
@@ -94,12 +80,7 @@ export class LoginComponent {
       console.log("body", body)
 
       this.loading = true; 
-
-//      if ( (email.value.trim() === "") || (clave.value.trim() === "")   ) {
-//          this.isError = true; 
-//          this.loading = false; 
-//      }else{ 
-
+ 
           this.isError = false;  
           this._authService.login(body) 
           // .subscribe(
