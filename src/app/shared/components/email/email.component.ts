@@ -30,7 +30,7 @@ export class EmailComponent {
     this.isFocused = false;
     const control = this.emailControl;
     if (control) {
-      control.markAsTouched(); 
+      control.markAsTouched();
     }
   }
 

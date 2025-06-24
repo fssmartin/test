@@ -31,13 +31,13 @@
         color:$blue2; 
         &.is-invalid{
             border-color:$red!important;
-            &:not([type="email"]){
+           &:not([type="email"]):not([name="name"]) {
                 border-right: 0 !important;            
             }
         }
 
         &.ng-valid{
-            border-color:$green2!important;
+            border-color:$green2;
         }
     }
     
@@ -76,7 +76,7 @@
 
         &--erroroption{
              
-            padding-top: 1rem;
+            padding-top: .3rem;
             font-size: 1.2rem;
             display: flex;
             width: 100%;

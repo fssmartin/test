@@ -35,6 +35,10 @@ export class PasswordComponent {
     this.confirmPasswordControl?.markAsTouched();
   }
 
+  blockAction(event: ClipboardEvent): void {
+    event.preventDefault();
+  }
+
   get passwordControl() {
     return this.form.get('password');
   }

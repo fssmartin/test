@@ -2,8 +2,9 @@
 
 
     <div class="auth-wraper auth-wraper--email"
-        [class.auth-wraper--error] ="isInvalid('password')"
-      [formGroup]="form">
+        [class.auth-wraper--error] ="isInvalid('email')"
+        [formGroup]="form">
+
         <label for="email">Email</label>
         <i class="fa fa-envelope fa-ico" aria-hidden="true"></i>
         <input name="email" type="email" 

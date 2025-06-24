@@ -16,26 +16,18 @@
                     <input id="name" type="text" 
                                 class="form-rounded-log" 
                                 name="name"  
+                                formControlName="name"
                                 placeholder="Nombre"
-                                pattern="[a-zA-Z0-9\s]+"
+                                (keypress)="allowOnlyLetters($event)"
+                                maxlength=10
+                                [class.is-invalid]="isInvalid('name')"
+                                [attr.aria-invalid]="isInvalid('name')"                                   
                                 role="presentation" required autocomplete="off" autofocus="" /> 
                     
-                </div>
+                </div> 
         
-                <!-- <div class="auth-wraper auth-wraper--email">        
-                    <label>Email</label>
-                    <i class="fa fa-envelope fa-ico" aria-hidden="true"></i>
-                    <input id="email" type="text" 
-                                class="form-rounded-log" 
-                                name="email" 
-                                placeholder="Email" 
-                                role="presentation" required autocomplete="off" autofocus=""/>  
-                </div> -->
-        
-                <app-email     [form]="form"></app-email>
-
-             
-               <app-password  [form]="form" [includeConfirm]="true"></app-password>
+                <app-email     [form]="form"></app-email> 
+                <app-password  [form]="form" [includeConfirm]="true"></app-password>
          
         
                 <div class="auth-wraper auth-wraper--confirmation">
