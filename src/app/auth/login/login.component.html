@@ -16,38 +16,16 @@
                     routerLink="/auth/register">Register</a>
                 </h2>
 
-                <div class="auth-wraper-full">
-                    <div class="auth-wraper auth-wraper--email">        
-                        <label for="email">Email</label>
-                        <i class="fa fa-envelope fa-ico" aria-hidden="true"></i>
-                        <input name="email" type="email" 
-                                id="emailForm" 
-                                placeholder="Email"
-                                autofocus=""
-                                formControlName="email"
-                                [class.is-invalid]="isInvalid('email')"
-                                [attr.aria-invalid]="isInvalid('email')"                                
-                                #inputEmail required autocomplete="off"/> 
+                <div class="auth-wraper-full"> 
+
+                    <app-email     [form]="form"></app-email>
+                    <app-password  [form]="form"></app-password>
+                                         
+                    
+                    <div *ngIf="isError" class="invalid-feedback">
+                        <p class="error_formulario">El usuario o contraseña son incorrectos.</p>
                     </div>
-             
-                    <div class="auth-wraper auth-wraper--pasword">
-                        <label for="password">Password</label>
-                        <i class="fa fa-lock fa-ico" aria-hidden="true"></i>
-                        <input  type="password" 
-                                id="password"
-                                autofocus=""
-                                formControlName="password" 
-                                [attr.aria-invalid]="isInvalid('password')"                                
-                                placeholder="Password"
-                                role="presentation" #inputPass required autocomplete="off" autofocus=""/>
-                        <div class="auth-pasword-show" (click)="passwordShowhide(inputPass,'.eye')" > 
-                            <i class="fa fa-eye eye" aria-hidden="true"></i> 
-                        </div> 
-            
-                        <div *ngIf="isError" class="invalid-feedback">
-                            <p class="error_formulario">El usuario o contraseña son incorrectos.</p>
-                        </div>
-                    </div> 
+
                 </div>
 
                 <a href="#ni"  routerLink="/auth/forget" tittle="Forgot your password?" class="forgotuser">Forgot your password?</a>
@@ -65,7 +43,6 @@
                         <i class="fa fa-sign-in" aria-hidden="true"></i>
                     </a>
                 </li>
-            
             </ul>
  
     </ng-container>

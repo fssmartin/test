@@ -1,5 +1,5 @@
 import { Component, Renderer2, computed, effect, signal } from '@angular/core'; 
-import { FormControl,FormGroup,ReactiveFormsModule,Validators} from "@angular/forms";
+import { FormBuilder, FormControl,FormGroup,ReactiveFormsModule,Validators} from "@angular/forms";
 import { Router } from '@angular/router'; 
 import { Subject, take, takeUntil, tap } from 'rxjs';
 
@@ -7,6 +7,8 @@ import { LoginDto } from '../../core/interfaces/user.dto';
 
 //import { GlobalService } from '../../core/services/global.service';
 import { AuthService } from '../../core/services/auth.service';
+
+import { passwordStrengthValidator } from '../../shared/components/password/password.validator';
 
 
 @Component({
@@ -21,27 +23,27 @@ export class LoginComponent {
   isError:boolean  = false;
   disabled:string = '';
   loading:boolean  = true; 
+
+  password = signal('');
+  passwordValid = computed(() => this.form.controls['password'].valid);
  
-
-  protected form = new FormGroup({
-      email: new FormControl("", [
-      Validators.required,
-      Validators.email,
-      Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
-      ]),
-      password: new FormControl("", [
-        Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(8),
-      ]),
-  });
-
+  form: FormGroup;
+  
   constructor(
     private router: Router, 
     private _authService: AuthService,
     private renderer: Renderer2, 
+    private fb: FormBuilder
     //private _globalService:GlobalService, 
   ){  
+
+   this.form = this.fb.group({
+        email: new FormControl("asd@asd.es", [
+                Validators.required,
+                Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i)
+        ]), 
+        password: new FormControl('aa!A1aaaaa', [Validators.required, passwordStrengthValidator()]),
+    });
 
     this.disabled = ''; 
 
@@ -65,9 +67,6 @@ export class LoginComponent {
     return control.invalid;
   }
 
-  
-
-
   ngOnInit(){
     this.renderer.removeClass(document.body, 'noCanvas'); 
   }
@@ -80,12 +79,8 @@ export class LoginComponent {
   }
  
 
-  login():void{ 
+  login():void{  
 
-      //const email = (document.getElementById('emailForm') as HTMLInputElement);
-      //const clave = (document.getElementById('password') as HTMLInputElement);
-
-      
       if (this.form.invalid) {
         this.form.markAllAsTouched();
         return;
@@ -96,6 +91,8 @@ export class LoginComponent {
         password: this.form.value.password ?? "",
       };
 
+      console.log("body", body)
+
       this.loading = true; 
 
 //      if ( (email.value.trim() === "") || (clave.value.trim() === "")   ) {
@@ -104,16 +101,14 @@ export class LoginComponent {
 //      }else{ 
 
           this.isError = false;  
-          this._authService.login(body)
-
+          this._authService.login(body) 
           // .subscribe(
           //   (response: any) => {   
           //     this.loading = false;
           //      console.log("response__",response)
           //     this.router.navigate(['/home']);     
           //   } 
-          // );   
-
+          // );    
 //      }
   
   }

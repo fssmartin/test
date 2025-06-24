@@ -85,7 +85,7 @@ private readonly tokenKey = 'token';
     setTimeout(() => {
       this.setUserData(data);
       this._loading.set(false);
-    }, 2000);
+    }, 1000);
 
         /*
      this.http.post<UserTokenDto>(this.url, loginDto).subscribe({
@@ -141,6 +141,15 @@ private readonly tokenKey = 'token';
     this._expiration.set(null);
     this._user.set(NULL_USERDATA);
     this.router.navigate(['/auth']);
+  }
+
+  reset$(data:any):Observable<boolean>{
+
+    
+      console.log("Enviando correo...",data)
+      this._loading.set(false);
+      return of(true); 
+
   }
 
   private loadSession(): void {
@@ -241,3 +250,7 @@ private readonly tokenKey = 'token';
   }
 
 }
+function off(arg0: string): Observable<boolean> {
+  throw new Error('Function not implemented.');
+}
+

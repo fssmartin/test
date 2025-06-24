@@ -7,13 +7,14 @@ import { RegisterComponent } from './register/register.component';
 //import { ForgetComponent } from './register/forget.component';
 import { SharedModule } from '../shared/components/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ForgetComponent } from './forget/forget.component'; 
 
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     LoginComponent,
     RegisterComponent,
-    //ForgetComponent
+    ForgetComponent
   ],
   imports: [
     ReactiveFormsModule,

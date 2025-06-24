@@ -1,22 +1,33 @@
  <div class="auth auth--login animated fadeIn ">
                     
-            <form id="login"> 
+            <form id="forget" [formGroup]="form">
                 
                 <h1>Reset your password</h1>
                 <h2>If the account exists, we will email you instructions to reset the password.</h2>
 
                 <div class="auth-wraper-full">
-                    <div class="auth-wraper auth-wraper--email">        
+                    <!-- <div class="auth-wraper auth-wraper--email">        
                         <label> Email </label>
                         <i class="fa fa-envelope fa-ico" aria-hidden="true"></i>
                         <input name="email" type="email" 
                                 id="emailForm" 
+                                placeholder="Email"
                                 autofocus=""
-                                placeholder="Enter your email address"
-                                #inputEmail required autocomplete="off"> 
+                                formControlName="email"
+                                [class.is-invalid]="isInvalid('email')"
+                                [attr.aria-invalid]="isInvalid('email')"                                
+                                #inputEmail required autocomplete="off"/> 
+
+                        <ul class="auth-wraper--erroroption"  *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty ||  form.controls['email'].touched)">
+                            <li class="auth_erroroption error2"  *ngIf="form.controls['email'].errors?.['required']"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>El email es obligatorio</li>
+                            <li class="auth_erroroption error2"  *ngIf="form.controls['email'].errors?.['pattern']"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Formato de email no válido</li>
+                        </ul> 
+
                     </div>
-              
+               -->
+                     <app-email     [form]="form"></app-email>
                 </div>
+
 
   
             </form>
@@ -26,6 +37,7 @@
                 <li class="menu-buttons-item">
                     <a class="btn btn--save" 
                     title="Send reset link"
+                    [class.disabled]="form.invalid"
                     (click)="reset()">
                         Send reset link
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>

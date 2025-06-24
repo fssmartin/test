@@ -15,8 +15,7 @@ export class DashBoardAdminComponent {
   //user:UserData = this._authService.user();
   isMenuOpen: boolean = false; // Estado inicial del menú (cerrado)
 
-  @ViewChild("preguntas") preguntas!: ElementRef;
-  @ViewChild("matenimientos") matenimientos!: ElementRef;
+  @ViewChild("preguntas") preguntas!: ElementRef; 
 
   public subscriber: Subscription | undefined;
     
@@ -29,13 +28,10 @@ export class DashBoardAdminComponent {
 
     this.subscriber = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: any) => {
-      this.renderer.removeClass(this.matenimientos.nativeElement, "active");
-      if(event['url'] != "/admin")
-          this.renderer.removeClass(this.preguntas.nativeElement, "active");
-      if( (event['url'] === "/admin/categories") || (event['url'] === "/admin/geography") || (event['url'] === "/admin/labels")  )   
-          this.renderer.addClass(this.matenimientos.nativeElement, "active");
-
+    ).subscribe((event: any) => { 
+      console.log("event['url']",event['url'])      
+      this.renderer.addClass(this.preguntas.nativeElement, "active");
+     
     });
 
     this.renderer.addClass(document.body, 'noCanvas');
@@ -44,9 +40,9 @@ export class DashBoardAdminComponent {
 
 
   ngAfterViewInit() {
- 
     let url = this.router.url; 
-    if(url === "/admin")
+    console.log("url",url)    
+ 
         this.renderer.addClass(this.preguntas.nativeElement, "active");
 
   }

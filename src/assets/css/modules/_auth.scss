@@ -6,7 +6,7 @@
 .auth{
  
     position: relative; 
-    height:calc(97vh - 7rem);
+    height:calc(98vh - 7rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,19 +30,19 @@
     input{
         color:$blue2; 
         &.is-invalid{
-            border-color:red!important;
+            border-color:$red!important;
             &:not([type="email"]){
                 border-right: 0 !important;            
             }
         }
 
         &.ng-valid{
-            border-color:green!important;
+            border-color:$green2!important;
         }
     }
     
     &-wraper-full{
-        padding:3rem 0 2rem 0;
+        padding:3rem 0 0rem 0;
     }
 
     &-wraper{
@@ -54,16 +54,57 @@
         flex-wrap: wrap;
 
         &--error{
-            & input[type=text],& input[type=password], & input[type=email] {
-                border: 1px $red2 solid !important;
+            input{
+                border-color: $red!important;
             }
-            & .auth-pasword-show{
-                border: 1px $red2 solid !important;
-                border-left: $red3 1px solid !important;
+            .auth-pasword-show{
+                border-color: $red!important;
             }
         }
 
-        
+        &--confirmation{
+            margin-top: 2rem;
+            label{
+                display: block;
+                font-size: 1.25rem;
+                line-height: 1.5rem;
+                a{
+                    color: $blue;
+                }
+            }   
+        }
+
+        &--erroroption{
+             
+            padding-top: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: left;
+            & .auth_erroroption{
+                color:$msg-errorok;
+                text-align: left;margin:0;padding:0;line-height: normal;
+                .fa{
+                    color:$msg-errorok;
+                    padding-right:.5rem
+                }
+                &.error,&.error2{
+                    color:$msg-errorinit;
+                    .fa{
+                        color:$msg-errorinit;
+                        opacity: .2;
+                    }
+                }
+                &.error2{
+                    color:$msg-error;
+                    .fa{ 
+                        color:$msg-error;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
         
         & .fa-ico{
             position: absolute;
@@ -122,10 +163,10 @@
                   cursor: pointer;
                 }
                 &.ng-invalid.ng-touched{
-                    border-color:red!important; 
+                    border-color:$red!important; 
                 }
                 &.ng-valid{
-                    border-color:green!important;
+                    border-color:$green2!important;
                 }                
             }  
         }
@@ -138,9 +179,12 @@
             flex: 1 0 0;
         }
 
+        &--ok{
+            .auth-pasword-show{
+                border-color: $green2;
+            }
+        }
     }
-
-
 }
 
 

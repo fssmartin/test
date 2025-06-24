@@ -6,6 +6,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import { UsersComponent } from './users/users.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
+import { GraficasComponent } from './graficas/graficas.component';
 
 
 const routes: Routes = [ 
@@ -18,6 +19,7 @@ const routes: Routes = [
         { path: 'configuration', component: ConfigurationComponent },
         { path: 'users',         component: UsersComponent },
         { path: 'questions',     component: QuestionsComponent },
+        { path: 'grafics',       component: GraficasComponent },
         { path: 'categories',    component: CategoriesComponent },
       ]
     },

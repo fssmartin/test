@@ -374,7 +374,7 @@ button{outline:none;}
         transition:none;  
         &:hover, :not(&-check) + &:active, &.active{
           background-color: transparent;
-          border-color: 0;  
+          border-color: transparent;  
         }  
     }
 

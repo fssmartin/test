@@ -1,0 +1,23 @@
+  
+
+
+    <div class="auth-wraper auth-wraper--email"
+        [class.auth-wraper--error] ="isInvalid('password')"
+      [formGroup]="form">
+        <label for="email">Email</label>
+        <i class="fa fa-envelope fa-ico" aria-hidden="true"></i>
+        <input name="email" type="email" 
+                id="emailForm" 
+                placeholder="Email"
+                autofocus=""
+                formControlName="email"
+                [class.is-invalid]="isInvalid('email')"
+                [attr.aria-invalid]="isInvalid('email')"                                
+                #inputEmail required autocomplete="off"/> 
+
+        <ul class="auth-wraper--erroroption"  *ngIf="isInvalid('email')  && emailControl?.errors">
+            <li class="auth_erroroption error2"  *ngIf="emailControl?.errors?.['required']"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>El email es obligatorio</li>
+            <li class="auth_erroroption error2"  *ngIf="emailControl?.errors?.['pattern']"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Formato de email no válido</li>
+        </ul> 
+
+    </div>    
