@@ -1,71 +1,79 @@
 <div class="auth auth--register animated fadeIn ">
 
-  <!-- componente logo  -->         
-    <!-- <app-logo-small [cssClass]="''"></app-logo-small>   -->
+    <app-loading *ngIf="loading"></app-loading>
 
-    <form id="registrar" [formGroup]="form">
-        
-        <h1>Crea tu Cuenta</h1>
-        <h2></h2>
-        <h2>* Rellena todos los campos</h2>
-        <div class="auth-wraper-full">
+    <ng-container *ngIf="!loading;"> 
 
-                <div class="auth-wraper auth-wraper--usu">        
-                    <label>Nombre</label>
-                    <i class="fa fa-user fa-ico" aria-hidden="true"></i>
-                    <input id="name" type="text" 
-                                class="form-rounded-log" 
-                                name="name"  
-                                formControlName="name"
-                                placeholder="Nombre"
-                                (keypress)="allowOnlyLetters($event)"
-                                maxlength=10
-                                [class.is-invalid]="isInvalid('name')"
-                                [attr.aria-invalid]="isInvalid('name')"                                   
-                                role="presentation" required autocomplete="off" autofocus="" /> 
+            <form id="registrar" [formGroup]="form">
+                
+                <h1>Crea tu Cuenta</h1>
+                <h2></h2>
+                <h2>* Rellena todos los campos</h2>
+                <div class="auth-wraper-full">
+
+                        <div class="auth-wraper auth-wraper--usu"                        
+                                [class.auth-wraper--error] ="isInvalid('name')"
+                                [class.auth-wraper--ok] ="!isInvalid('name')"
+                            >        
+                            <label>Nombre</label>
+                            <i class="fa fa-user fa-ico" aria-hidden="true"></i>
+                            <input id="name" type="text" 
+                                        class="form-rounded-log" 
+                                        name="name"  
+                                        formControlName="name"
+                                        placeholder="Nombre"
+                                        (keypress)="allowOnlyLetters($event)"
+                                        maxlength=10
+                                        [class.is-invalid]="isInvalid('name')"
+                                        [attr.aria-invalid]="isInvalid('name')"                                   
+                                        role="presentation" required autocomplete="off" autofocus="" /> 
+                            
+                        </div> 
+                
+                        <app-email     [form]="form"></app-email> 
+
+                        <app-password  [form]="form" [includeConfirm]="true"></app-password>
+                
+                
+                        <div class="auth-wraper auth-wraper--confirmation">
+                            <label>
+                                <input type="checkbox" formControlName="termsAccepted" />
+                                He leído y acepto los
+                                <a href="/terminos" target="_blank">Términos y Condiciones</a> y la
+                                <a href="/privacidad" target="_blank">Política de Privacidad</a>.
+                            </label>
                     
-                </div> 
-        
-                <app-email     [form]="form"></app-email> 
-                <app-password  [form]="form" [includeConfirm]="true"></app-password>
-         
-        
-                <div class="auth-wraper auth-wraper--confirmation">
-                    <label>
-                        <input type="checkbox" formControlName="termsAccepted" />
-                        He leído y acepto los
-                        <a href="/terminos" target="_blank">Términos y Condiciones</a> y la
-                        <a href="/privacidad" target="_blank">Política de Privacidad</a>.
-                    </label>
-            
-                    <div *ngIf="form.controls['termsAccepted'].touched && form.controls['termsAccepted'].invalid" class="error">
-                        Debe aceptar los términos y condiciones para continuar.
-                    </div>
-                </div> 
-        </div>
-        
-        
+                            <div *ngIf="form.controls['termsAccepted'].touched && form.controls['termsAccepted'].invalid" class="error">
+                                Debe aceptar los términos y condiciones para continuar.
+                            </div>
+                        </div> 
+                </div>
+                
+                
 
-    </form>
-        
-<!-- mod botones  --> 
-    <ul class="menu-buttons menu-buttons--vertical ">  
-        <li class="menu-buttons-item">
-            <a class="btn btn--save "
-                title="" 
-                routerLink="/auth/register">
-                Registrate
-                <i class="fa fa-user-plus" aria-hidden="true"></i>
-            </a>
-        </li> 
-        <li class="menu-buttons-item ">
-            <p>¿Ya tienes una cuenta?</p>
-            <a class="btn--enlace" 
-                title="'ACCESS.MSG_LOGIN.MSG_INIT' | translate "
-                routerLink="/auth">
-               Iniciar Sesion
-            </a>
-        </li> 
-    </ul>
- 
+            </form>
+                
+        <!-- mod botones  --> 
+            <ul class="menu-buttons menu-buttons--vertical ">  
+                <li class="menu-buttons-item">
+                    <a class="btn btn--save "
+                        title="" 
+                        [class.disabled]="form.invalid"
+                        (click)="register()">
+                        Registrate
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    </a>
+                </li> 
+                <li class="menu-buttons-item ">
+                    <p>¿Ya tienes una cuenta?</p>
+                    <a class="btn--enlace" 
+                        title="'ACCESS.MSG_LOGIN.MSG_INIT' | translate "
+                        routerLink="/auth">
+                    Iniciar Sesion
+                    </a>
+                </li> 
+            </ul>
+    
+    </ng-container>
+
 </div>

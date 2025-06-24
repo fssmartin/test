@@ -180,8 +180,9 @@
         }
 
         &--ok{
+            input,
             .auth-pasword-show{
-                border-color: $green2;
+                border-color: $green2!important;
             }
         }
     }

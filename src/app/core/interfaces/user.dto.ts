@@ -20,6 +20,18 @@ export const defaultLoginDto: LoginDto = {
   password: "",
 };
 
+export type RegisterDto = {
+  name?:string,
+  email: string;
+  password: string;
+};
+
+export const defaulTRegisterDto: RegisterDto = {
+  name:"",
+  email: "",
+  password: "",
+};
+
 export interface UserData {
     id?:number,
     username?:string,
@@ -29,10 +41,7 @@ export interface UserData {
     role?:Role
 }
 
-export interface UserDataAdmin {
-    id?: number; 
-    email?:string;    
-    role?: Role;
+export interface UserDataAdmin extends UserData {
 }
 
 export interface Role{
@@ -66,9 +75,11 @@ export const NULL_ROLE_ADMIN: Role = {
 }
 
 export const NULL_USERDATA_ADMIN: UserDataAdmin =  {
-  id: 0, 
+  id:0,
+  username:'',
+  name:'',
   email:'',
-  role: NULL_ROLE_ADMIN
+ // token:'',  role: NULL_ROLE_ADMIN
 }
 
 export const NULL_USERDATA: UserData =  { 

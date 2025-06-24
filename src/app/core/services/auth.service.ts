@@ -4,7 +4,7 @@ import {  BehaviorSubject, Observable, catchError, map, of, tap, throwError } fr
  
 import { GlobalService } from './global.service';
 
-import { LoginDto, NULL_USERDATA , UserData  } from '../interfaces/user.dto'
+import { LoginDto, NULL_ROLE, NULL_USERDATA , RegisterDto, UserData  } from '../interfaces/user.dto'
 import { LocalStorageService } from './localstorage.service';
 import { LoginResponse } from '../interfaces/token.dto';
 import { Router } from '@angular/router';
@@ -43,6 +43,41 @@ private readonly tokenKey = 'token';
   ) {
     console.log("[constructor AUTH]")
     this.isLocalStorage(); 
+  }
+
+  register(userRegister:RegisterDto): void { 
+    this._loading.set(true);
+
+
+    console.log("registeeeeeeeeeeeeeeeeeeeeeeeeer",userRegister)
+    let user:UserData = { 
+          username:"TREMP1",
+          name:  userRegister.name,
+          email: userRegister.email,
+          id: 1,
+          role: NULL_ROLE
+    }  
+
+    const data = {
+      token: "abc123...",
+      expiresIn: 300,
+      user: user  
+    }
+    
+    setTimeout(() => {
+      this.setUserData(data);
+      this._loading.set(false);
+    }, 1000);
+
+        /*
+     this.http.post<UserTokenDto>(this.url, loginDto).subscribe({
+      next: (userToken) => {
+        this.setUserData(userToken);
+        this._loading.set(false);
+      },
+      error: (error) => this.loginError.set(error.message),
+    });
+    */
   }
 
   login(userLogin:LoginDto): void { 
@@ -87,7 +122,7 @@ private readonly tokenKey = 'token';
       this._loading.set(false);
     }, 1000);
 
-        /*
+    /*
      this.http.post<UserTokenDto>(this.url, loginDto).subscribe({
       next: (userToken) => {
         this.setUserData(userToken);

@@ -3,9 +3,8 @@ import { FormBuilder, FormControl,FormGroup,ReactiveFormsModule,Validators} from
 import { Router } from '@angular/router'; 
 import { Subject, take, takeUntil, tap } from 'rxjs';
 
-import { LoginDto } from '../../core/interfaces/user.dto';
+import {LoginDto } from '../../core/interfaces/user.dto';
 
-//import { GlobalService } from '../../core/services/global.service';
 import { AuthService } from '../../core/services/auth.service';
 
 import { passwordStrengthValidator } from '../../shared/components/password/password.validator';
@@ -72,17 +71,15 @@ export class LoginComponent {
         return;
       }
       
-      const body: LoginDto = {
+      const body:LoginDto = {
         email: this.form.value.email ?? "",
-        password: this.form.value.password ?? "",
+        password: this.form.value.password ?? ""
       };
-
-      console.log("body", body)
-
-      this.loading = true; 
  
-          this.isError = false;  
-          this._authService.login(body) 
+
+      this.loading = true;  
+      this.isError = false;  
+      this._authService.login(body) 
           // .subscribe(
           //   (response: any) => {   
           //     this.loading = false;

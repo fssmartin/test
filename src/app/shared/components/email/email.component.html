@@ -3,6 +3,7 @@
 
     <div class="auth-wraper auth-wraper--email"
         [class.auth-wraper--error] ="isInvalid('email')"
+        [class.auth-wraper--ok] ="!isInvalid('email')"
         [formGroup]="form">
 
         <label for="email">Email</label>
