@@ -22,6 +22,10 @@
         color: $blue;   
     }
 
+    a{
+        cursor:pointer;
+    }
+
     a:hover:not(.btn){
         text-decoration: underline;
     }
@@ -69,9 +73,17 @@
                 font-size: 1.25rem;
                 line-height: 1.5rem;
                 a{
-                    color: $blue;
+                    color: $blue!important;
+
                 }
             }   
+            & .error{
+                color: #dc3545;
+                line-height: 1.2rem;
+                font-size: 1.2rem;
+                text-align: left;
+                padding-top: .5rem;
+            }
         }
 
         &--erroroption{
@@ -185,6 +197,7 @@
                 border-color: $green2!important;
             }
         }
+        
     }
 }
 

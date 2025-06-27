@@ -1,0 +1,37 @@
+ <div class="auth auth--login animated fadeIn ">
+                    
+   <app-loading *ngIf="loading" aria-live="assertive"></app-loading>
+
+    <ng-container *ngIf="!loading;"> 
+
+            <form id="change" [formGroup]="form">
+                
+                <h1>Restablece tu contraseña</h1>
+                <h2>Cambiando la contraseña para: fssmartin.com</h2>
+
+                <div class="auth-wraper-full">
+ 
+                      <app-password  [form]="form" [includeConfirm]="true"></app-password>
+
+                </div> 
+            </form>
+        
+        <!-- mod botones  --> 
+            <ul class="menu-buttons menu-buttons--vertical">
+                <li class="menu-buttons-item">
+                    <a class="btn btn--save" 
+                        title="Send reset link"
+                        [class.disabled]="form.invalid"
+                        (click)="change()">
+                        Cambiar contraseña
+                        <i class="fa fa-key" aria-hidden="true"></i>
+                    </a>
+                </li>
+            
+            </ul>
+ 
+
+    
+    </ng-container>
+
+</div>

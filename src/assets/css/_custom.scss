@@ -8,6 +8,9 @@
 /* Lib */
 @use "lib/reset";
 
+@use 'theme/light';
+@use 'theme/dark';
+
 /* Modules */
 @use "modules/base";
 @use "modules/inputs";

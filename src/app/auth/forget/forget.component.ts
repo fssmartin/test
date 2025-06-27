@@ -1,13 +1,11 @@
 import { Component, Renderer2, computed, effect, signal } from '@angular/core'; 
 import { Router } from '@angular/router'; 
 
-import { FormControl,FormGroup,ReactiveFormsModule,Validators} from "@angular/forms";
+import { FormControl,FormGroup,Validators} from "@angular/forms";
 
-import { Subject, take, takeUntil, tap } from 'rxjs';
-import { UserData } from '../../core/interfaces/user.dto';
+import { Subject } from 'rxjs'; 
 import { GlobalService } from '../../core/services/global.service';
-import { AuthService } from '../../core/services/auth.service';
-import { passwordStrengthValidator } from '@Shared/components/password/password.validator';
+import { AuthService } from '../../core/services/auth.service'; 
  
 
 @Component({
@@ -36,15 +34,7 @@ export class ForgetComponent {
     private _globalService:GlobalService, 
     private renderer: Renderer2, ){  
  
-  }
-
-
-  // protected isInvalid(controlName: string): boolean | undefined {
-  //   const control = this.form.get(controlName);
-  //   if (!control) return undefined;
-  //   if (control.pristine) return undefined;
-  //   return control.invalid;
-  // }
+  } 
 
   ngOnInit(){
     this.renderer.removeClass(document.body, 'noCanvas'); 
@@ -64,40 +54,31 @@ export class ForgetComponent {
       const body = {
         email: this.form.value.email ?? ""
       };
-/*
-      if(email.value.trim() === "") {
-          this.isError = true; 
-          this.loading = false; 
-      }else{
-*/         
+          
           this.isError = false;  
           this._authService.reset$(body)
           .subscribe({
               next: (data) => {
                  console.log("data",data)
+                 this.router.navigate(['/home']);     
               },
               error: (error) => console.log("error")
           })
-/*
-          this._authService.reset$(email.value.trim())
-          .subscribe(
-            (response: any) => {   
-              this.loading = false;
-              
-               console.log("response__",response)
-               
-              this.router.navigate(['/home']);     
-            } 
-          ); 
-  */
-          this.router.navigate(['/home']);     
+ 
 
-//      }
+
+/* TEXTO DEL CORREO QUE LE LLEGARA...
+    Estimado ASD@ASD.ES,
+    Has solicitado restablecer tu contraseña, para restablecer tu contraseña haz click en el botón que se encuentra en la parte inferior.
+    El enlace para recuperar la contraseña tendrá una validez de 24 horas, si no has solicitado cambiar la contraseña, ignora este mensaje.
+*/
+
+ 
   }
-
 
   ngOnDestroy():void { 
     this.destroy$.next('');
     this.destroy$.complete();
   }
 }
+

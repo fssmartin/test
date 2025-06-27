@@ -45,11 +45,22 @@ private readonly tokenKey = 'token';
     this.isLocalStorage(); 
   }
 
+
+
+  change(data:any):void{
+      this._loading.set(true); 
+      
+      setTimeout(() => {
+        this.logOut();
+        this._loading.set(false);
+      
+      }, 1000);
+  }
+
+
   register(userRegister:RegisterDto): void { 
-    this._loading.set(true);
-
-
-    console.log("registeeeeeeeeeeeeeeeeeeeeeeeeer",userRegister)
+    this._loading.set(true); 
+    
     let user:UserData = { 
           username:"TREMP1",
           name:  userRegister.name,

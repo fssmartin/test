@@ -9,7 +9,7 @@ import { FormControl, FormGroup,  } from '@angular/forms';
 export class PasswordComponent {
 
   @Input() form!: FormGroup; 
-  @Input() includeConfirm: boolean = false;
+  @Input() includeConfirm: boolean = false; 
 
   isFocused = false;
 
@@ -46,4 +46,5 @@ export class PasswordComponent {
   get confirmPasswordControl() {
     return this.form.get('confirmPassword');
   }
+ 
 }

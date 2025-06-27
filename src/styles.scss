@@ -1,5 +1,11 @@
 @charset "UTF-8";
-$theme: default; //reyes , verano , septiembre, navidad , default
+//$theme: 'theme-light'; //reyes , verano , septiembre, navidad , default
 
 
 @use "assets/css/custom";  
+ 
+
+body {
+  background-color: var(--color-bg)!important;
+  color: var(--color-text)!important;
+}

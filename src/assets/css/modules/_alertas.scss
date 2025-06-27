@@ -6,6 +6,11 @@ div:where(.swal2-container) {
   padding: 2rem!important;
 }  
 
+.politica .swal2-popup{
+   width: 45rem; 
+   margin-top: 4rem;
+}
+
 .swal2-popup{
 
     width: 43.8rem;
@@ -43,6 +48,24 @@ div:where(.swal2-container) {
       }
       &.ft-size14{
         font-size:1.4rem;        
+      }
+
+      &.politica{
+        font-size: 1.2rem;
+        text-align: justify;   
+        height:calc(100vh - 40rem);
+        & p{
+          padding:.5rem 0;
+          font-size: 1.1rem;
+        }
+        & .tit{
+          font-weight: bold;
+          padding:.5rem 0;
+          font-size: 1.2rem;
+          &:first-child{
+            padding-top: 0;
+          }
+        }   
       }
     } 
 

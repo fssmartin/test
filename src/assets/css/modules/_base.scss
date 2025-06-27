@@ -100,17 +100,14 @@ form {
     font-weight: bold;
     &.only{
       margin-bottom: 3.5rem;
-    }
-
-    & + h2{
-    //  margin-bottom: 3.5rem;
-    }
+    } 
   }
   h2{
     font-size: 16px;
     font-weight: 400;
     margin: 0 auto;
     padding: 0;
+    line-height: 2rem;
     a{    color: $blue;}
     & +h2{
       font-size: 13px;

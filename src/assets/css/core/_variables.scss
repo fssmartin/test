@@ -1,6 +1,6 @@
 
 /* Colors */
-
+/*
 $red:	 #dc3545; 
 $red2:	 #e72727; 
 $red3:	 #ffc0c0; 
@@ -44,8 +44,52 @@ $white2: #e7e7e7;
 $orange: #ff9800;
 $purple: #5b388b;
 $purple1:#875497;
-
-
+*/
+ 
+$red:	 var(--color-red); 
+$red2:	 var(--color-red2); 
+$red3:	 var(--color-red3);
+$red4:	 var(--color-red4);
+$red5:	 var(--color-red5);
+$red6:   var(--color-red6);
+$red7:   var(--color-red7);
+$red8:   var(--color-red8);
+$red9:   var(--color-red9);
+$green:  var(--color-green);
+$green2: var(--color-green2);
+$green3: var(--color-green3);
+$green4: var(--color-green4);
+$green5: var(--color-green5);
+$green6: var(--color-green6);
+$green7: var(--color-green7);
+$green8: var(--color-green8);
+$green9: var(--color-green9);
+$grey:   var(--color-grey);
+$grey2:  var(--color-grey2);
+$grey3:  var(--color-grey3);
+$grey4:  var(--color-grey4);
+$grey5:  var(--color-grey5);
+$grey6:  var(--color-grey6);
+$black:  var(--color-black);
+$black2: var(--color-black2);
+$blue:   var(--color-blue);
+$blue2:  var(--color-blue2);
+$blue3:  var(--color-blue3);
+$blue4:  var(--color-blue4);
+$blue5:  var(--color-blue5);
+$blue6:  var(--color-blue6);
+$blue7:	 var(--color-blue7);
+$blue8:	 var(--color-blue8);
+$blue9:	 var(--color-blue9);
+$yellow: var(--color-yellow);
+$yellow2:  var(--color-yellow2);
+$brown:  var(--color-brown2);
+$white:  var(--color-white);
+$white2: var(--color-white2);
+$orange: var(--color-orange);
+$purple: var(--color-purple);
+$purple1: var(--color-purple2);
+ 
 
 $image-path: "../img/"; //?
 

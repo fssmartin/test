@@ -1,7 +1,7 @@
  <div class="auth auth--login animated fadeIn ">
 
  
-    <app-loading *ngIf="loading"></app-loading>
+    <app-loading *ngIf="loading" aria-live="assertive"></app-loading>
 
     <ng-container *ngIf="!loading;"> 
 
@@ -19,6 +19,7 @@
                 <div class="auth-wraper-full"> 
 
                     <app-email     [form]="form"></app-email>
+                    
                     <app-password  [form]="form"></app-password>
                                          
                     
