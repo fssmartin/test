@@ -1,11 +1,42 @@
-@charset "UTF-8";
-//$theme: 'theme-light'; //reyes , verano , septiembre, navidad , default
+// fernando
+
+@use './assets/css/lib/reset'; 
+@use './assets/css/core/variables' as *;
+@use './assets/css/core/mixins' as *;
+@use './assets/css/core/fonts' as *;
+
+@use './assets/css/theme/light' as light;  // Importar el tema claro (light)
+@use './assets/css/theme/dark' as dark;    // Importar el tema oscuro (dark)
 
 
-@use "assets/css/custom";  
- 
+// Módulos
 
-body {
-  background-color: var(--color-bg)!important;
-  color: var(--color-text)!important;
+@use './assets/css/modules/base' as *;
+@use './assets/css/modules/inputs' as *;
+@use './assets/css/modules/buttons' as *;
+@use './assets/css/modules/menubuttons' as *;
+@use './assets/css/modules/logo' as *;
+@use './assets/css/modules/navbar' as *;
+@use './assets/css/modules/alertas' as *;
+@use './assets/css/modules/auth' as *;
+@use './assets/css/modules/dashboard' as *;
+
+
+// Establecer la variable de tema global
+$theme: 'light';  // Puedes cambiar a 'dark' cuando lo necesites
+/*
+@if $theme == 'light' {
+  @include light.light-theme;
+} @else if $theme == 'dark' {
+  @include dark.dark-theme;
+}
+*/
+
+// Estilos globales
+body.light-theme {
+  @include light.light-theme;
+}
+
+body.dark-theme {
+  @include dark.dark-theme; 
 }

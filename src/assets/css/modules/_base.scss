@@ -20,22 +20,22 @@ html{
 
 html,
 body{
-	height: max-content;
-
+	height: max-content; 
 }
 
 body{
-	margin: 0;
-	padding: 0;
-	@extend %bodyCopy; 
-  line-height: 1.7em;
-	font-size:1.6rem; 
-	color:$black; 
-  text-align: center; 
-	overflow-y: scroll;
-	overflow-x: hidden; 
-  background:transparent;
-
+    margin: 0;
+    padding: 0;
+    @extend %bodyCopy; 
+    line-height: 1.7em;
+    font-size:1.6rem; 
+    color:$black; 
+    text-align: center; 
+    overflow-y: scroll;
+    overflow-x: hidden; 
+    background:transparent;
+    background-color: $color-bg;
+    color: $color-text;
 }
 
 body, input, textarea, select, button {
@@ -43,7 +43,7 @@ body, input, textarea, select, button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+ 
 ul, li{
 	margin:0;
 	padding:0;
@@ -64,8 +64,7 @@ input[type="search"]::-webkit-search-cancel-button {
     margin: 0 auto ;
     padding:0 0 1.5rem 0;  
     position: relative;
-    overflow: hidden;
-    background: $white;
+    overflow: hidden; 
  }
 
  app-home, app-login, app-forget, app-register,app-page-not-found,

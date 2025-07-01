@@ -1,52 +1,8 @@
-[data-theme='dark'] {
-  --color-bg: #121212;
-  --color-text: #ffffff;
-  --color-primary: #bb86fc;
+@use '../core/variables' as *;
 
-
-  --red:    #000;
-  --red2:   #000;
-  --red3:	  #000; 
-  --red4:	  #000; 
-  --red5:	  #000;
-  --red6:   #000;
-  --red7:   #000;
-  --red8:   #000;
-  --red9:   #000;
-  --green:  #000;
-  --green2: #000;
-  --green3: #000;
-  --green4: #000;
-  --green5: #000;
-  --green6: #000;
-  --green7: #000;
-  --green8: #000;
-  --green9: #000;
-  --grey:   #000;
-  --grey2:  #000;
-  --grey3:  #000;
-  --grey4:  #000;
-  --grey5:  #000;
-  --grey6:  #000;
-  --black:  #000;
-  --black2: #000;
-  --blue:   #000;
-  --blue2:  #000;
-  --blue3:  #000;
-  --blue4:  #000;
-  --blue5:  #000;
-  --blue6:  #000;
-  --blue7:  #000; 
-  --blue8:  #000;  
-  --blue9:  #000;
-  --yellow: #000;
-  --yellow2:#000;
-  --brown:  #000;
-  --white:  #000;
-  --white2: #000;
-  --orange: #000;
-  --purple: #000;
-  --purple1:#000;  
-
+@mixin dark-theme {
+ 
+  background-color: $black;
+  color: $white;
 
 }
