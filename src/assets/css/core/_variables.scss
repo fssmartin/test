@@ -1,5 +1,4 @@
-
-/* Colors */
+ 
  
 $red:	 #dc3545; 
 $red2:	 #e72727; 
@@ -19,14 +18,19 @@ $green6: #389638;
 $green7: rgba(40, 167, 69, 0.5);
 $green8: #b9d1c5;
 $green9: #61a33a;
+$green10:#75b798;
 $grey:   #666;
 $grey2:  #ccc;
 $grey3:  #545454;
 $grey4:  #999;
 $grey5:  #ffffff4d;
 $grey6:  #63717f;
+$grey7:  #212529;
+$grey8:  #495057;
+$grey9:  rgba(255, 255, 255, 0.15);
 $black:  #000;
 $black2: hsla(149, 12%, 66%, 0.122);
+$black3: #343a40;
 $blue:   #56a5eb;
 $blue2:  #232B68;
 $blue3:  rgba(86, 185, 235, 0.5);
@@ -36,30 +40,23 @@ $blue6:  #0b5ed7;
 $blue7:	 #0a58ca; 
 $blue8:	 #c1d5e6;  
 $blue9:	 #03a9f4;
+$blue10: rgba(110,168,254, 1);
+$blue11: rgba(139,185,254,1);
 $yellow: #fdd835;
 $yellow2:  #ffcc00;
 $brown:  #795548;
 $white:  #fff;
 $white2: #e7e7e7;
+$white3: #dee2e6;
 $orange: #ff9800;
 $purple: #5b388b;
 $purple1:#875497; 
 
 $image-path: "~assets/img/"; //?
 
-/* Relations Colors */
 
-
-$color-text:$grey;
-$color-bg:$white;
-
-$text-color: $grey; 
-$heading-bg:$white;
-$text-aviso-color: $red;
-$listado-color: $grey;
-$listado-border-bottom:	$text-color;
-
-$body-bg:$white;
+$boby-bg: $white;
+$body-color: $grey7;  
 
 $msg-error     : $red;
 $msg-errorinit : $grey;
@@ -67,3 +64,4 @@ $msg-errorok   : $blue;
 
 $hundred:	100%;
 $section:	96rem;
+

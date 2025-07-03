@@ -19,10 +19,10 @@ export class DashBoardAdminComponent {
 
   public subscriber: Subscription | undefined;
     
-  constructor(
-    private _authService:AuthService,
-    private renderer: Renderer2,
-    private router: Router) {}
+    constructor(
+        private _authService:AuthService,
+        private renderer: Renderer2,
+        private router: Router) {}
 
   ngOnInit () {
 

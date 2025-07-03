@@ -11,9 +11,12 @@ const routes: Routes = [
   { path: 'auth', 
       loadChildren: () => import( './auth/auth.module').then(m => m.AuthModule) 
   }, 
-  {
-    path: 'admin',
+  {path: 'admin',
       loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule),
+       canActivate: [AuthGuard] 
+  },  
+  {path: 'user',
+      loadChildren: () => import('./pages/student/user.module').then(m => m.StudentModule),
        canActivate: [AuthGuard] 
   },  
   { path: '**', component: PageNotFoundComponent, pathMatch: 'full' },

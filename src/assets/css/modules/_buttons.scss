@@ -29,6 +29,7 @@ button{outline:none;}
     border-radius: .5rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
 
     @include respond(sm) {
       width: auto;
@@ -50,26 +51,7 @@ button{outline:none;}
         display: none;
     }
 
-    &-help{
-      color: $blue;
-      font-size: 2.5rem !important;
-      top: -13px;
-      z-index: 99999999;
-      right: -1.4rem !important;
-
-      .btn--arcade &{
-        color: $yellow2;
-      }
-      .btn--versus &{
-        color: $blue;
-      }
-      .btn--carrera &{
-        color: $green9;
-      }
-      .btn--pursuit &{
-        color: $red9;
-      }
-    }
+ 
 
     &[disabled],&:disabled,&.disabled { 
         box-shadow: none;
@@ -114,6 +96,15 @@ button{outline:none;}
         }
     }
 
+    &.btn--iconbig{
+        & .fa{
+            font-size: 6.5rem; 
+            opacity: .5;
+            position: absolute;
+            right: 0px;
+        }
+    }
+
     &--auto{
       max-width:100%;
       @include respond(sm) {
@@ -127,6 +118,9 @@ button{outline:none;}
     &--primary, &--cancel { 
         background-color: $blue;
         border-color: $blue;
+
+        background: linear-gradient(180deg, #65bce8 0%, #4784a3 100%);
+
         &:first-child:active,
         &:hover, :not(&-check) + &:active, &.active{
           cursor: pointer;
@@ -220,47 +214,7 @@ button{outline:none;}
             box-shadow: 0 0 0 3px $red6;
         }
     }  
-
-    &--game{
-      width: -webkit-fill-available;
-      margin:0;
-      justify-content: left;
-      padding:0.3rem 0.5rem 0.4rem 6rem;
-      font-size: 1.12rem;
-      font-weight: 600;
-      line-height: 1.2rem;
-      text-align: left;
-      color:$blue; 
-      background-color: $blue4;
-      border-color: $blue;
-      position: relative;
-      transition: none;
-      transform: none;
-      box-shadow:none;
-      min-height: 4.5rem;
-      max-height: 4.5rem;
-      
-      &:hover {
-        background-color:$blue;
-        color: $white;
-        cursor: pointer;
-        box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5); 
-        transform: none;
-        transition: none;  
-      }
-      @include respond(sm) {
-        padding:0.3rem 0.5rem 0.5rem 5.5rem; 
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-        min-height: 3.1rem;
-        max-height: 3.1rem;
-      }    
-      @include respond(ls) {
-        padding:0.5rem 0.5rem 0.5rem 6rem; 
-        font-size: 1.6rem;
-        line-height: 1.7rem;
-      }          
-    }
+ 
 
     &--disabled{
       color: #fff;
@@ -319,48 +273,6 @@ button{outline:none;}
         font-weight:bold;
     }
 
-    &--special{
-      position: relative; 
-      top: 1px;
-      &::before{
-        content: "*";
-        color: $red;
-        font-size: 26px; 
-        position: absolute; 
-        padding: 0px;
-        top: -4px;
-        z-index: 9;
-        width: 5px;
-        height: 5px;
-        text-align: center;
-        margin: 0 auto; 
-        right: -1px;
-      } 
-      & .fa{
-        opacity: .6;
-        top: 1px;
-      }
-    }
-
-    &--ami{
-      font-size: 10px;
-      min-height: auto;
-      min-width: auto;
-      padding: .2rem 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      top: -7px;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      box-shadow: none;
-      pointer-events: none;
-      cursor: default;
-    }
-
- 
-
     // ADMIN
     .menu-buttons--admin  & {
         background-color: transparent;
@@ -412,161 +324,8 @@ button{outline:none;}
             font-weight: normal;
             line-height: normal;
             padding-right: .8rem;
-        }
-        // @include respond(lg) {
-        //     margin-left:10px;  
-        // }
+        } 
 
     }
 }
- 
-.ripple-button {
-  position: relative;
-  overflow: hidden;
-  padding: 10px 20px;
-  border: none;
-  background-color: #6200ea; /* Color de fondo */
-  color: $white;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s;
-}
-
-.ripple-button:hover {
-  background-color: #3700b3;  
-}
- 
-.ripple-button::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
-  transform: scale(0);
-  animation: ripple 0.6s linear;
-  pointer-events: none;
-  z-index: 1;
-}
- 
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
- 
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.6);
-  transform: scale(0);
-  animation: ripple-animation 0.6s linear;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes ripple-animation {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-@keyframes shakeX {
-  0%,to {
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0)
-  }
-
-  10%,30%,50%,70%,90% {
-      -webkit-transform: translate3d(-10px,0,0);
-      transform: translate3d(-10px,0,0)
-  }
-
-  20%,40%,60%,80% {
-      -webkit-transform: translate3d(10px,0,0);
-      transform: translate3d(10px,0,0)
-  }
-}
- 
-
-/* Icon Wobble Horizontal */
-@-webkit-keyframes btn-next {
-  16.65% {
-    -webkit-transform: translateX(6px);
-    transform: translateX(6px);
-  }
-  33.3% {
-    -webkit-transform: translateX(-5px);
-    transform: translateX(-5px);
-  }
-  49.95% {
-    -webkit-transform: translateX(4px);
-    transform: translateX(4px);
-  }
-  66.6% {
-    -webkit-transform: translateX(-2px);
-    transform: translateX(-2px);
-  }
-  83.25% {
-    -webkit-transform: translateX(1px);
-    transform: translateX(1px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-@keyframes btn-next {
-  16.65% {
-    -webkit-transform: translateX(6px);
-    transform: translateX(6px);
-  }
-  33.3% {
-    -webkit-transform: translateX(-5px);
-    transform: translateX(-5px);
-  }
-  49.95% {
-    -webkit-transform: translateX(4px);
-    transform: translateX(4px);
-  }
-  66.6% {
-    -webkit-transform: translateX(-2px);
-    transform: translateX(-2px);
-  }
-  83.25% {
-    -webkit-transform: translateX(1px);
-    transform: translateX(1px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-
-/* Pulse Shrink */
-@-webkit-keyframes hvr-pulse-shrink {
-  to {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-}
-@keyframes hvr-pulse-shrink {
-  to {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-}
-.hvr-pulse-shrink { 
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-}
-.hvr-pulse-shrink:hover, .hvr-pulse-shrink:focus, .hvr-pulse-shrink:active { 
-  animation-name: hvr-pulse-shrink; 
-  animation-duration: 0.3s; 
-  animation-timing-function: linear; 
-  animation-iteration-count: infinite; 
-  animation-direction: alternate;
-}
+  

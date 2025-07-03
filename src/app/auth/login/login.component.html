@@ -21,18 +21,17 @@
                     <app-email     [form]="form"></app-email>
                     
                     <app-password  [form]="form"></app-password>
-                                         
-                    
+                                                             
                     <div *ngIf="isError" class="invalid-feedback">
                         <p class="error_formulario">El usuario o contraseña son incorrectos.</p>
                     </div>
 
                 </div>
 
-                <a href="#ni"  routerLink="/auth/forget" tittle="Forgot your password?" class="forgotuser">Forgot your password?</a>
+                <a href="#ni"  routerLink="/auth/forget" 
+                    tittle="Forgot your password?" class="forgotuser">Forgot your password?</a>
         
-            </form>
-        
+            </form> 
         <!-- mod botones  --> 
             <ul class="menu-buttons menu-buttons--vertical">
                 <li class="menu-buttons-item">

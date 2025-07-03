@@ -1,29 +1,29 @@
 <div class="dashboard dashboard--home animated fadeIn "> 
  
 <!-- componente menu-buttons  -->  
- 
+
         <ng-container *ngIf="localDataUser().email; else noUser">
                 <ul class="menu-buttons menu-buttons--vertical ">
                         <li class="menu-buttons-item"> 
-                                <a class="btn btn--primary hvr-pulse-shrink" appShowEffectClick 
+                                <a class="btn btn--primary  btn--iconbig" appShowEffectClick 
                                         (click)="goPage('/test')" >Test
                                         <i class="fa fa-comments-o" aria-hidden="true"></i></a>
                         </li>
         
                         <li class="menu-buttons-item">
-                                <a class="btn btn--primary hvr-pulse-shrink" appShowEffectClick    
+                                <a class="btn btn--primary  btn--iconbig" appShowEffectClick    
                                         (click)="goPage('/user')"  >Perfil
                                         <i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
                         </li>
                                                                         
                         <li class="menu-buttons-item">
-                                <a class="btn btn--secundary hvr-pulse-shrink"  appShowEffectClick 
+                                <a class="btn btn--secundary btn--iconbig"  appShowEffectClick 
                                         (click)="goPage('/admin')" >Admin
                                         <i class="fa fa-cogs" aria-hidden="true"></i></a>
                         </li>
                         
                         <li class="menu-buttons-item">
-                                <a class="btn btn--primary hvr-pulse-shrink"  appShowEffectClick 
+                                <a class="btn btn--primary btn--iconbig"  appShowEffectClick 
                                         (click)="goExit()">Salir
                                         <i class="fa fa-sign-out" aria-hidden="true"></i></a>
                         </li>
@@ -33,5 +33,21 @@
                 <h1>Accede a tu espacio de evaluación</h1>
                 <p>Realiza tests asignados, consulta tus resultados y gestiona tu progreso desde un único lugar.</p>
         </ng-template>
+ 
+
+<!--div class="container">
+    <button class="btn btn-primary">Acción Principal</button>
+    <button class="btn btn-secondary">Acción Secundaria</button>
+    <button class="btn btn-success">Guardar</button>
+    <button class="btn btn-warning">Advertencia</button>
+    <button class="btn btn-danger">Eliminar</button>
+    <button class="btn btn-link">Enlace</button>
+    <button class="btn btn-primary btn-lg">Botón Grande</button>
+    <button class="btn btn-secondary btn-sm">Botón Pequeño</button>
+    <button class="btn btn-secondary" disabled>Botón Deshabilitado</button>
+</div-->
+ 
+
+
 
 </div> 

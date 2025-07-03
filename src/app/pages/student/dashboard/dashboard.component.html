@@ -1,1 +1,24 @@
-<p>dashboard works!</p>
+<div class="dashboard dashboard--user animated fadeIn "> 
+
+     
+
+        <ul class="menu-buttons menu-buttons--admin  "> 
+                 <li class="menu-buttons-item menu-buttons-item--home">
+                        <a class="btn btn--secundary" #home
+                                [skipLocationChange]="true" 
+                                routerLinkActive="active" routerLink="/home"
+                        ><i class="fa fa-home" aria-hidden="true"></i></a>
+                </li>
+                <li class="menu-buttons-item">
+                        <a class="btn btn--secundary" #preguntas
+                                [skipLocationChange]="true" 
+                                routerLinkActive="active" routerLink="questions"
+                        ><i aria-hidden="true" class="fa fa-question-circle"></i>Preguntas</a>
+                </li>
+                         
+        </ul> 
+ 
+
+        <router-outlet></router-outlet>
+
+</div> 

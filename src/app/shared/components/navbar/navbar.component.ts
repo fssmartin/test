@@ -8,6 +8,7 @@ import { AuthService } from '../../../core/services/auth.service';
 
 import { NULL_USERDATA, UserData } from '../../../core/interfaces/user.dto';
 import { Language, NULL_LANGUAGE } from '../../../core/interfaces/base.dto';
+import { ThemeService } from 'src/app/core/services/themes';
 
 @Component({
   selector: 'app-navbar',
@@ -22,9 +23,12 @@ export class NavbarComponent  {
   
   localDataUser = signal<UserData>(NULL_USERDATA); 
   langSelected  = signal<Language>(NULL_LANGUAGE); 
+
+currentTheme: string = 'light';
   
   constructor( 
     private router: Router, 
+    private _themeService: ThemeService,
     private _authService:AuthService    
   ) { 
       
@@ -45,6 +49,19 @@ export class NavbarComponent  {
     },{ allowSignalWrites: true });    
     */ 
      
+  }
+
+  ngOnInit(): void {
+    this._themeService.currentTheme$.subscribe((theme) => {
+      this.currentTheme = theme;
+      document.body.classList.remove('light-theme', 'dark-theme');
+      document.body.classList.add(`${theme}-theme`);
+    });
+  }
+
+  // Método para cambiar el tema
+  switchTheme(theme: string): void {
+    this._themeService.setTheme(theme);
   }
 
   changeLanguage(lang : string, $event:any){

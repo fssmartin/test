@@ -44,9 +44,7 @@ app-navbar{
         .navbar-logo{
             position: relative; 
             display: none;
-            top: 2px;
-
-                
+            top: 2px; 
             &--mobile{
                 top: 4px;
                 display: block;
@@ -109,7 +107,7 @@ app-navbar{
         justify-content: space-between;
         align-items: center;
         color:$white;
-        gap: 0 20px ;
+        gap: 0;
         padding: 0 10px; 
         margin-left: auto;
         min-height: 5.47rem;
@@ -138,9 +136,18 @@ app-navbar{
             position: absolute;
             top:0.8rem;
         }
+
+        & > a{
+            border-left:1px solid $white;
+            padding: 0 1.5rem;
+            &:first-of-type{border: none;}
+        }
         
         .user-info{
             display: block;
+            border-right:1px solid $white;
+            padding: 0 1.5rem;
+            height: 25px;
             em{display: none;}
             & .fa{  
                 display: block;
@@ -158,13 +165,13 @@ app-navbar{
             @include respond(sm) {
                 em{display: block;}
                 padding-left:0;
+
             } 
 
         }
         .user-login{
             display: flex;
-            align-items: center;
-            padding-right: .5rem;
+            align-items: center; 
             cursor: pointer;
             .fa{
                 padding-right: .8rem;
@@ -200,13 +207,13 @@ app-navbar{
             }           
 
         }
-
         .user-out{
             position: relative;
             width: 40px; 
             height: 40px;
             opacity: 1;
             cursor: pointer;
+            display: inline-block;
             &::before{ 
                 content: '';
                 position: absolute;
@@ -217,6 +224,7 @@ app-navbar{
                 background: url(../../images/logout.png) no-repeat top left;
                 background-size: contain;
                 z-index: 1;           
+                left: 25%;
                 @include respond(sm) {
                     top: -1px;
                     width: 40px; 
@@ -255,4 +263,47 @@ app-navbar{
         }
     }
 
+}
+
+.rotating {
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.glowing {
+    animation: moonGlow 2s ease-in-out infinite ;
+}
+
+/* Efecto de resplandor lunar (glow) */
+@keyframes moonGlow {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(1.1);
+        filter: brightness(1.4);
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+/* Animación de rotación suave de la luna */
+@keyframes rotateMoon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

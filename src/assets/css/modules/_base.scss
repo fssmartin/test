@@ -8,6 +8,8 @@
 %bodyCopy {
   font-family: Poppins;
 	//font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: $boby-bg;
+    color: $body-color;
 }
 
 html{
@@ -15,7 +17,7 @@ html{
  	-webkit-text-size-adjust: 100%; 
  	-moz-text-size-adjust: 100%;
 	font-size:x-small;
-  background-color: $blue4;
+    background-color: $blue4;
 }
 
 html,
@@ -26,16 +28,13 @@ body{
 body{
     margin: 0;
     padding: 0;
-    @extend %bodyCopy; 
+    @extend %bodyCopy;  
     line-height: 1.7em;
     font-size:1.6rem; 
-    color:$black; 
     text-align: center; 
     overflow-y: scroll;
     overflow-x: hidden; 
-    background:transparent;
-    background-color: $color-bg;
-    color: $color-text;
+    background:transparent; 
 }
 
 body, input, textarea, select, button {
@@ -142,7 +141,7 @@ label{
 a{ 
 	text-decoration: none;
 	color:$green;
-
+    cursor: pointer;
 }
 
 h1{

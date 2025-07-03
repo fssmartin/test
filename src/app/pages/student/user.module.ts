@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core'; 
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
-import { DashboardStudentComponent } from './dashboard/dashboard.component';
-import { StudentRoutingModule } from './student-routing.module';
+import { DashboardUserComponent } from './dashboard/dashboard.component';
+import { UserRoutingModule } from './user-routing.module'; 
 
 
 @NgModule({
   declarations: [  
-    DashboardStudentComponent, 
+    DashboardUserComponent 
   ],
   imports: [ 
     CommonModule,    
-    StudentRoutingModule, 
+    UserRoutingModule, 
     FormsModule, 
     FormsModule,
     ReactiveFormsModule

@@ -20,17 +20,18 @@
 @use './assets/css/modules/alertas' as *;
 @use './assets/css/modules/auth' as *;
 @use './assets/css/modules/dashboard' as *;
+@use './assets/css/modules/dashboardUser' as *;
 
 
 // Establecer la variable de tema global
 $theme: 'light';  // Puedes cambiar a 'dark' cuando lo necesites
-/*
+ 
 @if $theme == 'light' {
   @include light.light-theme;
 } @else if $theme == 'dark' {
   @include dark.dark-theme;
 }
-*/
+ 
 
 // Estilos globales
 body.light-theme {

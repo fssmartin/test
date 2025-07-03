@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module'; 
 import { TeacherRoutingModule } from './teacher/teacher-routing.module';
-import { StudentRoutingModule } from './student/student-routing.module';
+import { UserRoutingModule } from './student/user-routing.module';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { StudentRoutingModule } from './student/student-routing.module';
     CommonModule,
     PagesRoutingModule,
     TeacherRoutingModule,
-    StudentRoutingModule
+    UserRoutingModule
   ]
 })
 export class PagesModule { }

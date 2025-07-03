@@ -9,9 +9,7 @@ import { ConfigurationComponent } from './configuration/configuration.component'
 import { GraficasComponent } from './graficas/graficas.component';
 
 
-const routes: Routes = [ 
-
-    // ---------- si es con routerOulet menu horizontal desde 
+const routes: Routes = [  
     { 
       path: '', component: DashBoardAdminComponent ,
       children: [
