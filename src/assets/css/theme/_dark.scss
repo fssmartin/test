@@ -66,6 +66,29 @@
     }
 
 
+
+
+
+    .btn--save, .btn--success {
+        background-color: $green2;
+        border-color: $green2;
+        color: $white;
+        &:hover{
+            background-color: $green11;
+            border-color: $green12;
+        }    
+    }
+
+    .btn.disabled, .btn[disabled] { 
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: .65;
+        filter: alpha(opacity=65);
+        -webkit-box-shadow: none;
+        box-shadow: none; 
+    }
+}
+
 /*
     .btn-primary {
         background-color: #0056b3;   
@@ -165,5 +188,4 @@
         color: #0056b3;
         text-decoration: underline;
     }
-*/
-}
+*/ 
